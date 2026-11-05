@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Impressoras industriais Markem-Imaje | Brassell — ES, MG e RJ</title>
+<meta name="description" content="Impressoras industriais Markem-Imaje para codificação e rastreabilidade de produtos. Distribuidor oficial em ES, MG e RJ, com unidades em Belo Horizonte e no Rio de Janeiro.">
+<link rel="canonical" href="https://brassell.com.br/lp-impressoras-industriais-markem-imaje/">
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#16181d;
+  --ink-2:#2a2e36;
+  --text:#3d424c;
+  --muted:#6b717c;
+  --line:#e3e1dc;
+  --paper:#f6f5f1;
+  --white:#ffffff;
+  --accent:#8e2a86;      /* púrpura da linha Markem-Imaje */
+  --accent-dark:#6c1f66;
+  --accent-soft:#f4e9f3;
+  --radius:10px;
+  --wrap:1180px;
+  --display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  --body:"Barlow",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--body);font-size:17px;line-height:1.6;color:var(--text);background:var(--white);-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);color:var(--ink);line-height:1.08;margin:0;letter-spacing:.005em}
+h2{font-size:clamp(30px,4vw,44px)}
+h3{font-size:22px}
+p{margin:0}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-inline:20px}
+.wrap > *,.lines > *,.products > *,.apps > *{min-width:0}
+h1,h2,h3{overflow-wrap:break-word}
+section{padding-block:clamp(56px,8vw,96px)}
+.eyebrow{font-family:var(--display);font-weight:700;font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;display:block}
+.lead{font-size:19px;color:var(--text);max-width:62ch;margin-top:16px}
+.section-head{margin-bottom:44px}
+
+/* botão */
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--display);font-weight:700;font-size:18px;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;background:var(--accent);color:#fff;padding:15px 26px;border-radius:6px;border:0;cursor:pointer;transition:background .15s}
+.btn:hover{background:var(--accent-dark)}
+.btn svg{width:18px;height:18px}
+.btn-ghost{background:transparent;color:var(--accent);padding:0;font-size:16px}
+.btn-ghost:hover{background:transparent;color:var(--accent-dark)}
+
+/* topo */
+.top{border-bottom:1px solid var(--line);background:var(--white)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-block:14px;flex-wrap:wrap}
+.top-brand{display:flex;align-items:center;gap:22px}
+.top-brand .logo{height:46px;width:auto}
+.top-dist{display:flex;align-items:center;gap:10px;padding-left:22px;border-left:1px solid var(--line);font-size:12px;line-height:1.2;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.top-dist img{height:34px;width:auto}
+.top .btn{padding:11px 20px;font-size:16px}
+
+/* hero */
+.hero{background:var(--paper);padding-block:clamp(48px,7vw,88px);position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(var(--line) 1px,transparent 1px);background-size:18px 18px;opacity:.7;pointer-events:none}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(40px,5.6vw,68px)}
+.hero h1 span{color:var(--accent)}
+.hero .lead{margin-top:20px}
+.hero-points{list-style:none;padding:0;margin:32px 0 36px;display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.hero-points li{padding:16px 16px 16px 0}
+.hero-points li+li{padding-left:16px;border-left:1px solid var(--line)}
+.hero-points strong{display:block;font-family:var(--display);font-size:22px;color:var(--ink);line-height:1.1}
+.hero-points span{font-size:15px;color:var(--muted)}
+.hero-visual{position:relative;justify-self:center;max-width:400px}
+.hero-visual img{position:relative;z-index:1;mix-blend-mode:multiply}
+.hero-visual::after{content:"";position:absolute;left:8%;right:8%;bottom:2%;height:38%;background:var(--accent-soft);border-radius:50%;filter:blur(2px);z-index:0}
+.hero-code{position:absolute;z-index:2;left:-18px;bottom:16%;background:var(--ink);color:#fff;font-family:"Courier New",monospace;font-size:13px;line-height:1.5;padding:12px 16px;border-radius:6px;box-shadow:0 12px 30px rgba(0,0,0,.18)}
+.hero-code b{color:#e9b8e3;font-weight:400}
+
+/* selos */
+.seals{background:var(--ink);color:#fff;padding-block:22px}
+.seals ul{list-style:none;margin:0;padding:0;display:flex;justify-content:space-between;gap:16px 32px;flex-wrap:wrap}
+.seals li{display:flex;align-items:center;gap:12px;font-family:var(--display);font-weight:600;font-size:19px;letter-spacing:.02em}
+.seals svg{width:26px;height:26px;flex:none;color:#e9b8e3}
+
+/* linhas */
+.lines{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.line-card{border:1px solid var(--line);border-radius:var(--radius);padding:28px;background:var(--white);display:flex;flex-direction:column;gap:12px}
+.line-card .tag{font-family:var(--display);font-weight:700;font-size:14px;letter-spacing:.12em;color:var(--accent);text-transform:uppercase}
+.line-card p{color:var(--text)}
+.line-card a{margin-top:auto;padding-top:8px}
+
+/* vitrine */
+.shelf{margin-top:56px}
+.shelf-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:20px;flex-wrap:wrap}
+.shelf-head h3{font-size:28px}
+.shelf-head span{font-size:15px;color:var(--muted)}
+.products{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px}
+.product{background:var(--paper);border-radius:var(--radius);padding:18px 18px 20px;display:flex;flex-direction:column;text-decoration:none;transition:transform .15s, box-shadow .15s}
+.product:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(22,24,29,.08)}
+.product figure{margin:0 0 14px;aspect-ratio:4/3;background:var(--white);border-radius:6px;display:flex;align-items:center;justify-content:center;padding:10px;overflow:hidden}
+.product img{max-height:100%;width:auto;object-fit:contain}
+.product small{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.product strong{font-family:var(--display);font-size:24px;color:var(--ink);line-height:1.1;margin-top:2px}
+.product em{font-style:normal;font-size:15px;color:var(--accent);font-weight:600;margin-top:10px}
+
+/* aplicações */
+.apps-sec{background:var(--paper)}
+.apps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.app{background:var(--white);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column}
+.app-img{aspect-ratio:16/9;background:var(--ink-2);overflow:hidden;position:relative}
+.app-img img{width:100%;height:100%;object-fit:cover}
+.app-img.icon{display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--ink-2),var(--accent-dark))}
+.app-img.icon img{width:72px;height:72px;filter:invert(1);object-fit:contain}
+.app-body{padding:20px 22px 24px}
+.app-body h3{font-size:22px;margin-bottom:8px;display:flex;align-items:center;gap:10px}
+.app-body h3 img{width:28px;height:28px}
+.app-body p{font-size:16px}
+
+/* autoridade */
+.authority .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
+.quote{font-family:var(--display);font-weight:700;font-size:clamp(44px,6vw,76px);line-height:.98;color:var(--ink)}
+.quote span{color:var(--accent)}
+.authority .lead{margin-top:22px}
+.diffs{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.diffs li{display:grid;grid-template-columns:52px 1fr;gap:16px;padding:20px 0;border-bottom:1px solid var(--line)}
+.diffs li:first-child{border-top:1px solid var(--line)}
+.diffs .n{font-family:var(--display);font-weight:700;font-size:30px;color:var(--accent);line-height:1}
+.diffs h3{font-size:22px;margin-bottom:4px}
+
+/* números */
+.numbers{background:var(--ink);color:#d9dbe0}
+.numbers .section-head h2{color:#fff}
+.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid #3a3f49}
+.num{padding:32px 28px 8px 0}
+.num+.num{padding-left:28px;border-left:1px solid #3a3f49}
+.num strong{display:block;font-family:var(--display);font-weight:700;font-size:clamp(56px,7vw,88px);color:#fff;line-height:1}
+.num strong sup{font-size:.5em;color:#e9b8e3;vertical-align:top;position:relative;top:.15em}
+.num span{display:block;margin-top:10px;font-size:17px}
+
+/* faq */
+.faq .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:start}
+.faq details{border-bottom:1px solid var(--line)}
+.faq details:first-of-type{border-top:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;padding:22px 44px 22px 0;position:relative;font-family:var(--display);font-weight:600;font-size:22px;color:var(--ink);line-height:1.2}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";position:absolute;right:6px;top:50%;width:12px;height:12px;border-right:2px solid var(--accent);border-bottom:2px solid var(--accent);transform:translateY(-70%) rotate(45deg);transition:transform .2s}
+.faq details[open] summary::after{transform:translateY(-30%) rotate(-135deg)}
+.faq details p{padding:0 44px 24px 0}
+
+/* contato */
+.contact{background:var(--accent);color:#fff}
+.contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.contact h2{color:#fff}
+.contact .lead{color:#f3dff1}
+.contact-meta{margin-top:28px;display:grid;gap:6px;font-size:16px;color:#f3dff1}
+.form-slot{background:var(--white);color:var(--text);border-radius:var(--radius);padding:32px;min-height:340px}
+.form-slot.placeholder{display:flex;align-items:center;justify-content:center;text-align:center;border:2px dashed #c9a3c5;background:#fbf6fa;color:var(--muted);font-size:15px}
+
+/* rodapé */
+.footer{background:var(--ink);color:#aeb3bc;padding-block:48px 28px;font-size:15px}
+.footer .wrap{display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px}
+.footer .logo-box{background:#fff;border-radius:6px;padding:10px 14px;display:inline-block}
+.footer .logo-box img{height:40px;width:auto}
+.footer h4{font-family:var(--display);font-size:17px;letter-spacing:.08em;text-transform:uppercase;color:#fff;margin:0 0 10px}
+.footer address{font-style:normal}
+.footer .legal{grid-column:1/-1;border-top:1px solid #31353e;padding-top:20px;margin-top:8px;font-size:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+/* responsivo */
+@media (max-width:980px){
+  .hero .wrap,.authority .wrap,.faq .wrap,.contact .wrap{grid-template-columns:1fr}
+  .hero-visual{max-width:300px;order:-1}
+  .lines{grid-template-columns:1fr}
+  .apps{grid-template-columns:repeat(2,1fr)}
+  .footer .wrap{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  .top-dist{display:none}
+  .top .btn{display:none}
+  .hero-points{grid-template-columns:1fr}
+  .hero-points li,.hero-points li+li{padding:12px 0;border-left:0}
+  .hero-points li+li{border-top:1px solid var(--line)}
+  .hero-visual{max-width:210px}
+  .hero-code{left:0;font-size:11px;padding:8px 12px}
+  .seals ul{flex-direction:column}
+  .apps{grid-template-columns:1fr}
+  .nums{grid-template-columns:1fr}
+  .num,.num+.num{padding:24px 0;border-left:0}
+  .num+.num{border-top:1px solid #3a3f49}
+  .products{grid-template-columns:repeat(2,1fr);gap:12px}
+  .product{padding:12px}
+  .product strong{font-size:20px}
+  .footer .wrap{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- TOPO: sem menu de navegação (padrão) -->
+<header class="top">
+  <div class="wrap">
+    <div class="top-brand">
+      <img class="logo" src="assets/img/logo-brassell.png" alt="Brassell" width="133" height="46">
+      <div class="top-dist">
+        <span>Distribuidor<br>oficial</span>
+        <img src="assets/img/logo-markem.png" alt="Markem-Imaje" width="71" height="34">
+      </div>
+    </div>
+    <a class="btn" href="#contato">Solicitar orçamento</a>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Codificação industrial Markem-Imaje</span>
+      <h1>Impressoras industriais <span>Markem-Imaje</span> para codificar e rastrear seus produtos</h1>
+      <p class="lead">Impressoras industriais de alta precisão para codificação de produtos e embalagens na linha de produção: data, lote, validade, código de barras e QR Code.</p>
+      <ul class="hero-points">
+        <li><strong>Distribuidor oficial</strong><span>Markem-Imaje</span></li>
+        <li><strong>Atendemos</strong><span>ES, MG e RJ</span></li>
+        <li><strong>Mais de 30 anos</strong><span>em automação industrial</span></li>
+      </ul>
+      <a class="btn" href="#contato">Solicitar orçamento
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+    <div class="hero-visual">
+      <img src="assets/img/p-9450.jpg" alt="Impressora industrial Markem-Imaje 9450 de jato de tinta contínuo" width="681" height="1024">
+      <div class="hero-code" aria-hidden="true">LOTE <b>L2611-05</b><br>VAL <b>05/05/2027</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- SELOS DE CONFIANÇA -->
+<div class="seals">
+  <div class="wrap">
+    <ul>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Atendimento em ES, MG e RJ</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>Equipamentos originais Markem-Imaje</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 21h18M5 21V8l7-4 7 4v13M9 21v-6h6v6"/></svg>Unidades em BH e Rio</li>
+    </ul>
+  </div>
+</div>
+
+<!-- OFERTA: LINHAS DE PRODUTO + VITRINE -->
+<section id="equipamentos">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Equipamentos</span>
+      <h2>Soluções para marcação, codificação e rastreabilidade industrial</h2>
+      <p class="lead">Equipamentos de codificação para linha de produção, para indústrias de alimentos, bebidas, farmacêuticos e eletrônicos. Três tecnologias Markem-Imaje, cada uma para um tipo de embalagem e velocidade de linha.</p>
+    </div>
+
+    <div class="lines">
+      <article class="line-card">
+        <span class="tag">CIJ</span>
+        <h3>Jato de Tinta Contínuo</h3>
+        <p>Precisão inigualável em altas velocidades para uma ampla gama de materiais.</p>
+        <a class="btn btn-ghost" href="#cij">Ver 5 modelos →</a>
+      </article>
+      <article class="line-card">
+        <span class="tag">TTO</span>
+        <h3>Transferência Térmica</h3>
+        <p>Ideal para embalagens flexíveis, garantindo qualidade superior em codificação.</p>
+        <a class="btn btn-ghost" href="#tto">Ver 4 modelos →</a>
+      </article>
+      <article class="line-card">
+        <span class="tag">Print &amp; Apply</span>
+        <h3>Etiquetagem automática</h3>
+        <p>Perfeição no posicionamento e aplicação de etiquetas para embalagens de todos os tamanhos.</p>
+        <a class="btn btn-ghost" href="#pa">Ver 3 modelos →</a>
+      </article>
+    </div>
+
+    <div class="shelf" id="cij">
+      <div class="shelf-head"><h3>Impressoras de jato de tinta contínuo (CIJ)</h3><span>5 modelos</span></div>
+      <div class="products">
+        <a class="product" href="#contato"><figure><img src="assets/img/p-9018.jpg" alt="Markem-Imaje 9018" loading="lazy"></figure><small>Markem-Imaje</small><strong>9018</strong><em>Solicitar orçamento</em></a>
+        <a class="product" href="#contato"><figure><img src="assets/img/p-9330.png" alt="Markem-Imaje 9330" loading="lazy"></figure><small>Markem-Imaje</small><strong>9330</strong><em>Solicitar orçamento</em></a>
+        <a class="product" href="#contato"><figure><img src="assets/img/p-9410.png" alt="Markem-Imaje 9410" loading="lazy"></figure><small>Markem-Imaje</small><strong>9410</strong><em>Solicitar orçamento</em></a>
+        <a class="product" href="#contato"><figure><img src="assets/img/p-9450.jpg" alt="Markem-Imaje 9450" loading="lazy"></figure><small>Markem-Imaje</small><strong>9450</strong><em>Solicitar orçamento</em></a>
+        <a class="product" href="#contato"><figure><img src="assets/img/p-9750.png" alt="Markem-Imaje 9750" loading="lazy"></figure><small>Markem-Imaje</small><strong>9750</strong><em>Solicitar orçamento</em></a>
+      </div>
+    </div>
+
+    <div class="shelf" id="tto">
+      <div class="shelf-head"><h3>Impressoras de transferência térmica (TTO)</h3><span>4 modelos</span></div>
+      <div class="products">
+        <a class="product" href="#contato"><figure><img src="assets/img/p-oem.png" alt="Markem-Imaje SmartDate OEM Connect" loading="lazy"></figure><small>Markem-Imaje</small><strong>SmartDate OEM Connect</strong><em>Solicitar orçamento</em></a>
+        <a class="product" href="#contato"><figure><img src="assets/img/p-x30.png" alt="Markem-Imaje SmartDate X30" loading="lazy"></figure><small>Markem-Imaje</small><strong>SmartDate X30</strong><em>Solicitar orçamento</em></a>
+        <a class="product" href="#contato"><figure><img src="assets/img/p-x45.png" alt="Markem-Imaje SmartDate X45" loading="lazy"></figure><small>Markem-Imaje</small><strong>SmartDate X45</strong><em>Solicitar orçamento</em></a>
+        <a class="product" href="#contato"><figure><img src="assets/img/p-x65.png" alt="Markem-Imaje SmartDate X65" loading="lazy"></figure><small>Markem-Imaje</small><strong>SmartDate X65</strong><em>Solicitar orçamento</em></a>
+      </div>
+    </div>
+
+    <div class="shelf" id="pa">
+      <div class="shelf-head"><h3>Sistemas de etiquetagem print &amp; apply</h3><span>3 modelos</span></div>
+      <div class="products">
+        <a class="product" href="#contato"><figure><img src="assets/img/p-2200.png" alt="Markem-Imaje 2200" loading="lazy"></figure><small>Markem-Imaje</small><strong>2200</strong><em>Solicitar orçamento</em></a>
+        <a class="product" href="#contato"><figure><img src="assets/img/p-2200-pallet.png" alt="Markem-Imaje 2200 PALLET" loading="lazy"></figure><small>Markem-Imaje</small><strong>2200 PALLET</strong><em>Solicitar orçamento</em></a>
+        <a class="product" href="#contato"><figure><img src="assets/img/p-cimpak.png" alt="Markem-Imaje CIMPAK" loading="lazy"></figure><small>Markem-Imaje</small><strong>CIMPAK</strong><em>Solicitar orçamento</em></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROVA: APLICAÇÕES -->
+<section class="apps-sec">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Aplicações</span>
+      <h2>Impressoras para embalagens, alimentos, papelão e metais</h2>
+      <p class="lead">O código certo, legível e no lugar certo, em todo tipo de aplicação industrial.</p>
+    </div>
+    <div class="apps">
+      <article class="app">
+        <div class="app-img"><img src="assets/img/x-cartoon.jpg" alt="Data e lote impressos em caixa de papelão" loading="lazy"></div>
+        <div class="app-body"><h3><img src="assets/img/a-papelao.png" alt="" width="28" height="28">Caixa de papelão ondulado</h3><p>Econômico e conforme as normas: o código certo na caixa certa, sempre.</p></div>
+      </article>
+      <article class="app">
+        <div class="app-img"><img src="assets/img/x-cans.jpg" alt="Códigos impressos em latas de metal" loading="lazy"></div>
+        <div class="app-body"><h3><img src="assets/img/a-latas.png" alt="" width="28" height="28">Latas e tampas de metal</h3><p>Códigos permanentes que garantem segurança e rastreio em alimentos e bebidas.</p></div>
+      </article>
+      <article class="app">
+        <div class="app-img icon"><img src="assets/img/a-cabos.png" alt="" loading="lazy"></div>
+        <div class="app-body"><h3><img src="assets/img/a-cabos.png" alt="" width="28" height="28">Cabos e fios</h3><p>Códigos 100% permanentes e legíveis, mesmo em ambientes de produção adversos.</p></div>
+      </article>
+      <article class="app">
+        <div class="app-img"><img src="assets/img/x-cheese.jpg" alt="Data e código de barras impressos em embalagem de alimento" loading="lazy"></div>
+        <div class="app-body"><h3><img src="assets/img/a-alimentos.png" alt="" width="28" height="28">Alimentos</h3><p>Tintas 100% seguras e comestíveis, em conformidade com normas locais e nacionais.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- AUTORIDADE: FRASE + DIFERENCIAIS -->
+<section class="authority">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Por que Markem-Imaje com a Brassell</span>
+      <p class="quote">Código legível, <span>linha sem erro.</span></p>
+      <p class="lead">Transforme seus processos com a marca de confiança global, vendida por quem conhece a indústria de ES, MG e RJ.</p>
+    </div>
+    <ol class="diffs">
+      <li><span class="n">01</span><div><h3>Distribuidor oficial</h3><p>Markem-Imaje oficial em MG, RJ e ES.</p></div></li>
+      <li><span class="n">02</span><div><h3>Tecnologia de ponta</h3><p>Sistemas modernos, com alta performance e confiabilidade.</p></div></li>
+      <li><span class="n">03</span><div><h3>Conformidade regulamentar</h3><p>Códigos dentro das normas locais e internacionais, com rastreabilidade garantida.</p></div></li>
+      <li><span class="n">04</span><div><h3>Suporte especializado</h3><p>Orientação na escolha do equipamento certo.</p></div></li>
+      <li><span class="n">05</span><div><h3>Atendimento próximo</h3><p>Unidades em Belo Horizonte e no Rio de Janeiro.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- PROVA: NÚMEROS -->
+<section class="numbers">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" style="color:#e9b8e3">Brassell em números</span>
+      <h2>Experiência em automação industrial</h2>
+    </div>
+    <div class="nums">
+      <div class="num"><strong>30<sup>+</sup></strong><span>anos em automação industrial</span></div>
+      <div class="num"><strong>3</strong><span>estados com distribuição oficial Markem-Imaje: ES, MG e RJ</span></div>
+      <div class="num"><strong>2</strong><span>unidades: Belo Horizonte e Rio de Janeiro</span></div>
+    </div>
+    <!-- LOGOS DE CLIENTES: entram aqui (4 a 8, 400×160). Autorização confirmada, arquivos pendentes. -->
+  </div>
+</section>
+
+<!-- AUTORIDADE: PERGUNTAS FREQUENTES -->
+<section class="faq">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Perguntas frequentes</span>
+      <h2>Dúvidas sobre as impressoras industriais</h2>
+    </div>
+    <div>
+      <details>
+        <summary>Vocês atendem a minha região?</summary>
+        <p>Sim. A Brassell é distribuidor oficial Markem-Imaje em Minas Gerais, Rio de Janeiro e Espírito Santo, com unidades em Belo Horizonte e no Rio de Janeiro.</p>
+      </details>
+      <details>
+        <summary>A Brassell é distribuidor oficial da Markem-Imaje?</summary>
+        <p>Sim. Somos distribuidor oficial Markem-Imaje desde 2016, com equipamentos originais.</p>
+      </details>
+      <details>
+        <summary>Qual tecnologia serve para a minha embalagem?</summary>
+        <p>Depende do material e da linha. O jato de tinta contínuo atende uma ampla gama de materiais em alta velocidade; a transferência térmica é ideal para embalagens flexíveis; o print &amp; apply aplica etiquetas em embalagens de todos os tamanhos.</p>
+      </details>
+      <details>
+        <summary>O que a impressora consegue imprimir?</summary>
+        <p>Datas, lote e validade, código de barras e QR Code, direto na embalagem ou no produto.</p>
+      </details>
+      <details>
+        <summary>A impressão é segura para embalagens de alimentos?</summary>
+        <p>Sim. Para alimentos, as tintas são 100% seguras e comestíveis, em conformidade com normas locais e nacionais.</p>
+      </details>
+      <details>
+        <summary>O código é permanente?</summary>
+        <p>Depende da aplicação. Em cabos, fios e plásticos extrudados, o código é permanente e legível mesmo em ambientes adversos; em garrafas plásticas, há opção de código permanente ou removível.</p>
+      </details>
+      <details>
+        <summary>Qual é o horário de atendimento?</summary>
+        <p>De segunda a sexta, das 8h às 18h.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section class="contact" id="contato">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow" style="color:#f3dff1">Solicitar orçamento</span>
+      <h2>Fale com a Brassell e escolha a impressora industrial certa para a sua linha</h2>
+      <p class="lead">Conte qual produto você precisa codificar e indicamos o equipamento Markem-Imaje ideal.</p>
+      <div class="contact-meta">
+        <span>Atendimento em ES, MG e RJ</span>
+        <span>Segunda a sexta, das 8h às 18h</span>
+      </div>
+    </div>
+    <!-- FORMULÁRIO: substituir pelo shortcode do plugin -->
+    <div class="form-slot placeholder" id="form-plugin">Formulário — entra aqui via shortcode do plugin</div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div>
+      <span class="logo-box"><img src="assets/img/logo-brassell.png" alt="Brassell" width="116" height="40"></span>
+      <p style="margin-top:14px">Distribuidor oficial Markem-Imaje em ES, MG e RJ.</p>
+    </div>
+    <div>
+      <h4>Belo Horizonte</h4>
+      <address>Rua Érico Verissimo, 2155<br>Santa Mônica, Belo Horizonte - MG<br>31525-365</address>
+    </div>
+    <div>
+      <h4>Rio de Janeiro</h4>
+      <address>Rua José de Figueiredo, 320, Loja 103, Bloco 4<br>Barra da Tijuca, Rio de Janeiro - RJ<br>22793-170</address>
+    </div>
+    <div class="legal">
+      <span>Copyright © 2026 Brassell</span>
+      <!-- POLÍTICA DE PRIVACIDADE: link entra depois -->
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
