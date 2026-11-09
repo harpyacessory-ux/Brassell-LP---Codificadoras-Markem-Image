@@ -234,18 +234,59 @@ section{padding-block:clamp(56px,8vw,96px)}
   .products{grid-template-columns:repeat(3,minmax(0,1fr))}
 }
 
-/* aplicações */
-.apps-sec{background:var(--paper)}
-.apps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-.app{background:var(--white);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column}
-.app-img{aspect-ratio:16/9;background:var(--ink-2);overflow:hidden;position:relative}
+/* aplicações: medidas da arte de referência (1842 px); --a = 1px da arte */
+.apps-sec{--a:clamp(.52px, calc(100vw / 1842), 1.1px);--p-ink:#15122a;--p-text:#2c2a38;--p-purple:#8a168d;position:relative;overflow:hidden;padding:calc(var(--a) * 40) 0 calc(var(--a) * 56);background:linear-gradient(180deg,#f7f5fa 0%,#f4f1f8 60%,#f7f5fa 100%)}
+.ap-in{position:relative;max-width:calc(var(--a) * 1842);margin:0 auto}
+.ap-photo{position:absolute;z-index:0;top:calc(var(--a) * -40);right:0;width:calc(var(--a) * 852);height:calc(var(--a) * 350);-webkit-mask-image:linear-gradient(90deg,transparent,#000 20%),linear-gradient(180deg,#000 88%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent,#000 20%),linear-gradient(180deg,#000 88%,transparent);mask-composite:intersect}
+.ap-photo img{width:100%;height:100%;object-fit:cover}
+.ap-head{position:relative;z-index:1;padding:0 calc(var(--a) * 40) 0 calc(var(--a) * 110);max-width:calc(var(--a) * 1060)}
+.ap-eyebrow{display:flex;align-items:center;gap:calc(var(--a) * 20);font-family:"Plus Jakarta Sans",var(--body);font-weight:700;font-size:max(12.5px, calc(var(--a) * 18.5));letter-spacing:.02em;text-transform:uppercase;color:var(--p-purple)}
+.ap-eyebrow::after{content:"";width:calc(var(--a) * 76);height:2px;background:var(--p-purple)}
+.apps-sec h2{font-family:"Plus Jakarta Sans",var(--body);font-weight:400;font-size:max(27px, calc(var(--a) * 50));line-height:1.04;letter-spacing:-.022em;color:var(--p-ink);margin-top:calc(var(--a) * 10)}
+.apps-sec h2 strong{font-weight:800}
+.ap-sub{margin-top:calc(var(--a) * 18);font-family:"Plus Jakarta Sans",var(--body);font-weight:500;font-size:max(15px, calc(var(--a) * 20.5));line-height:1.35;color:var(--p-text)}
+.ap-feats{list-style:none;margin:calc(var(--a) * 30) 0 0;padding:0;display:flex}
+.ap-feats li{display:flex;align-items:center;gap:calc(var(--a) * 12);padding-inline:calc(var(--a) * 34);font-family:"Plus Jakarta Sans",var(--body);font-size:max(12.5px, calc(var(--a) * 18));line-height:1.3;color:var(--p-text);white-space:nowrap}
+.ap-feats li:first-child{padding-left:0}
+.ap-feats li+li{border-left:1.5px solid #dcd5e2}
+.ap-feats strong{display:block;font-weight:700;color:var(--p-ink)}
+.ap-feats svg{width:max(30px, calc(var(--a) * 50));height:max(30px, calc(var(--a) * 50));flex:none;color:var(--p-purple)}
+
+.apps{position:relative;z-index:1;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:calc(var(--a) * 22);padding-inline:calc(var(--a) * 59);margin-top:calc(var(--a) * 50)}
+.app{display:flex;flex-direction:column;background:#fff;border-radius:calc(var(--a) * 22);overflow:hidden;box-shadow:0 calc(var(--a) * 18) calc(var(--a) * 40) calc(var(--a) * -16) rgba(60,30,80,.25),0 0 0 1px rgba(120,90,150,.07)}
+.app-img{aspect-ratio:412/195;overflow:hidden}
 .app-img img{width:100%;height:100%;object-fit:cover}
-.app-img.icon{display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--ink-2),var(--accent-dark))}
-.app-img.icon img{width:72px;height:72px;filter:invert(1);object-fit:contain}
-.app-body{padding:20px 22px 24px}
-.app-body h3{font-size:22px;margin-bottom:8px;display:flex;align-items:center;gap:10px}
-.app-body h3 img{width:28px;height:28px}
-.app-body p{font-size:16px}
+.app-body{flex:1;display:flex;flex-direction:column;padding:calc(var(--a) * 20) calc(var(--a) * 34) calc(var(--a) * 30) calc(var(--a) * 38)}
+.app-body h3{display:flex;align-items:center;gap:calc(var(--a) * 26);font-family:var(--display);font-weight:700;font-size:max(19px, calc(var(--a) * 27));line-height:1.05;color:var(--p-ink);min-height:calc(var(--a) * 60);margin:0}
+.app-body h3 svg{width:max(30px, calc(var(--a) * 52));height:max(30px, calc(var(--a) * 52));flex:none;color:var(--p-purple);padding-right:calc(var(--a) * 26);border-right:1.5px solid #ddd5e3;box-sizing:content-box}
+.app-body p{margin-top:calc(var(--a) * 18);font-family:"Plus Jakarta Sans",var(--body);font-size:max(14px, calc(var(--a) * 18.5));line-height:1.45;color:var(--p-text)}
+.app-link{margin-top:auto;padding-top:max(16px, calc(var(--a) * 32));display:inline-flex;align-items:center;gap:calc(var(--a) * 14);font-family:var(--display);font-weight:700;font-size:max(17px, calc(var(--a) * 25));color:var(--p-purple);text-decoration:none;align-self:flex-start}
+.app-link svg{width:max(18px, calc(var(--a) * 28));height:max(18px, calc(var(--a) * 28));transition:transform .15s}
+.app-link:hover svg{transform:translateX(4px)}
+
+@media (max-width:1023px){
+  .apps-sec{padding:40px 0 52px}
+  .ap-in{display:flex;flex-direction:column}
+  .ap-head{order:1;padding:0 20px;max-width:720px}
+  .ap-photo{order:2;position:relative;top:auto;width:auto;height:auto;aspect-ratio:852/350;margin-top:22px;-webkit-mask-image:none;mask-image:none}
+  .apps{order:3;padding-inline:20px;margin-top:24px;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+  .ap-eyebrow{font-size:13px}
+  .apps-sec h2{font-size:clamp(27px,6.4vw,40px)}
+  .ap-sub{font-size:16px}
+  .ap-feats{flex-direction:column;margin-top:18px}
+  .ap-feats li,.ap-feats li+li{padding:10px 0;border-left:0;font-size:15px;white-space:normal}
+  .ap-feats li+li{border-top:1px solid #e3dce8}
+  .ap-feats svg{width:34px;height:34px}
+  .app{border-radius:18px}
+  .app-body{padding:16px 18px 20px}
+  .app-body h3{font-size:21px;gap:14px;min-height:0}
+  .app-body h3 svg{width:34px;height:34px;padding-right:14px}
+  .app-body p{font-size:15px;margin-top:12px}
+  .app-link{font-size:19px;padding-top:16px}
+}
+@media (max-width:620px){
+  .apps{grid-template-columns:1fr}
+}
 
 /* autoridade */
 .authority .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
@@ -299,12 +340,10 @@ section{padding-block:clamp(56px,8vw,96px)}
 /* responsivo */
 @media (max-width:980px){
   .authority .wrap,.faq .wrap,.contact .wrap{grid-template-columns:1fr}
-  .apps{grid-template-columns:repeat(2,1fr)}
   .footer .wrap{grid-template-columns:1fr 1fr}
 }
 @media (max-width:640px){
   body{font-size:16px}
-  .apps{grid-template-columns:1fr}
   .nums{grid-template-columns:1fr}
   .num,.num+.num{padding:24px 0;border-left:0}
   .num+.num{border-top:1px solid #3a3f49}
@@ -522,29 +561,52 @@ section{padding-block:clamp(56px,8vw,96px)}
 </section>
 
 <!-- PROVA: APLICAÇÕES -->
-<section class="apps-sec">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">Aplicações</span>
-      <h2>Impressoras para embalagens, alimentos, papelão e metais</h2>
-      <p class="lead">O código certo, legível e no lugar certo, em todo tipo de aplicação industrial.</p>
+<section class="apps-sec" aria-labelledby="ap-title">
+  <div class="ap-in">
+    <div class="ap-photo" aria-hidden="true"><img src="assets/img/app-linha.jpg" alt="" width="852" height="350" loading="lazy"></div>
+    <div class="ap-head">
+      <span class="ap-eyebrow">Aplicações</span>
+      <h2 id="ap-title">Impressoras para <strong>embalagens,<br> alimentos, papelão e metais</strong></h2>
+      <p class="ap-sub">O código certo, legível e no lugar certo, em todo tipo de aplicação industrial.</p>
+      <ul class="ap-feats">
+        <li><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><circle cx="24" cy="24" r="15"/><circle cx="24" cy="24" r="8"/><circle cx="24" cy="24" r="2.5" fill="currentColor"/><path d="M24 3v8M24 37v8M3 24h8M37 24h8"/></svg><span><strong>Marcação precisa</strong><strong>e de alta qualidade</strong></span></li>
+        <li><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="24" cy="27" r="16"/><path d="M20 5h8M24 5v6M35.5 13.5l3-3"/><path d="M24 27l7-9"/></svg><span><strong>Alta performance</strong>na sua linha de produção</span></li>
+        <li><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 4l16 6v11c0 10-6.8 18-16 22-9.2-4-16-12-16-22V10z"/><path d="M16.5 24l5.5 5.5 10-11"/></svg><span><strong>Conformidade</strong>com normas do setor</span></li>
+      </ul>
     </div>
+
     <div class="apps">
       <article class="app">
-        <div class="app-img"><img src="assets/img/x-cartoon.jpg" alt="Data e lote impressos em caixa de papelão" loading="lazy"></div>
-        <div class="app-body"><h3><img src="assets/img/a-papelao.png" alt="" width="28" height="28">Caixa de papelão ondulado</h3><p>Econômico e conforme as normas: o código certo na caixa certa, sempre.</p></div>
+        <div class="app-img"><img src="assets/img/app-papelao.jpg" alt="Data e lote impressos em embalagem de papelão" width="414" height="195" loading="lazy"></div>
+        <div class="app-body">
+          <h3><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" aria-hidden="true"><path d="M24 6L42 14V34L24 42L6 34V14Z"/><path d="M6 14L24 22L42 14M24 22V42"/><path d="M15 10L33 18V25"/></svg><span>Caixa de papelão ondulado</span></h3>
+          <p>Econômico e conforme as normas: o código certo na caixa certa, sempre.</p>
+          <a class="app-link" href="#equipamentos">Conhecer soluções <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M3 12h17M14 6l6 6-6 6"/></svg></a>
+        </div>
       </article>
       <article class="app">
-        <div class="app-img"><img src="assets/img/x-cans.jpg" alt="Códigos impressos em latas de metal" loading="lazy"></div>
-        <div class="app-body"><h3><img src="assets/img/a-latas.png" alt="" width="28" height="28">Latas e tampas de metal</h3><p>Códigos permanentes que garantem segurança e rastreio em alimentos e bebidas.</p></div>
+        <div class="app-img"><img src="assets/img/app-latas.jpg" alt="Lote e validade impressos em lata de metal" width="408" height="194" loading="lazy"></div>
+        <div class="app-body">
+          <h3><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><ellipse cx="24" cy="9" rx="12" ry="4.5"/><path d="M12 9v30c0 2.5 5.4 4.5 12 4.5s12-2 12-4.5V9"/><ellipse cx="24" cy="9" rx="7" ry="2"/></svg><span>Latas e tampas de metal</span></h3>
+          <p>Códigos permanentes que garantem segurança e rastreio em alimentos e bebidas.</p>
+          <a class="app-link" href="#equipamentos">Conhecer soluções <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M3 12h17M14 6l6 6-6 6"/></svg></a>
+        </div>
       </article>
       <article class="app">
-        <div class="app-img icon"><img src="assets/img/a-cabos.png" alt="" loading="lazy"></div>
-        <div class="app-body"><h3><img src="assets/img/a-cabos.png" alt="" width="28" height="28">Cabos e fios</h3><p>Códigos 100% permanentes e legíveis, mesmo em ambientes de produção adversos.</p></div>
+        <div class="app-img"><img src="assets/img/app-cabos.jpg" alt="Especificação impressa em cabo elétrico" width="409" height="194" loading="lazy"></div>
+        <div class="app-body">
+          <h3><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 44V26h10v18z"/><path d="M21 26v-6M27 26v-6"/><path d="M24 20V6M21 20L13 9M27 20l8-11M22 20L17 4M26 20l5-16"/></svg><span>Cabos e fios</span></h3>
+          <p>Códigos 100% permanentes e legíveis, mesmo em ambientes de produção adversos.</p>
+          <a class="app-link" href="#equipamentos">Conhecer soluções <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M3 12h17M14 6l6 6-6 6"/></svg></a>
+        </div>
       </article>
       <article class="app">
-        <div class="app-img"><img src="assets/img/x-cheese.jpg" alt="Data e código de barras impressos em embalagem de alimento" loading="lazy"></div>
-        <div class="app-body"><h3><img src="assets/img/a-alimentos.png" alt="" width="28" height="28">Alimentos</h3><p>Tintas 100% seguras e comestíveis, em conformidade com normas locais e nacionais.</p></div>
+        <div class="app-img"><img src="assets/img/app-alimentos.jpg" alt="Datas de fabricação e validade, lote e QR Code impressos em embalagem de queijo" width="412" height="194" loading="lazy"></div>
+        <div class="app-body">
+          <h3><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 40L34 14"/><path d="M30 6c4-2 9 3 7 7l-3 3-7-7z"/><path d="M40 40L14 14M10 4l-4 4 8 8 4-4M8 6l6 6M12 4l6 6"/></svg><span>Alimentos</span></h3>
+          <p>Tintas 100% seguras e comestíveis, em conformidade com normas locais e nacionais.</p>
+          <a class="app-link" href="#equipamentos">Conhecer soluções <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M3 12h17M14 6l6 6-6 6"/></svg></a>
+        </div>
       </article>
     </div>
   </div>
