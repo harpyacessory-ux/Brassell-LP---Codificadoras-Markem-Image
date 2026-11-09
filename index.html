@@ -288,16 +288,54 @@ section{padding-block:clamp(56px,8vw,96px)}
   .apps{grid-template-columns:1fr}
 }
 
-/* autoridade */
-.authority .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
-.quote{font-family:var(--display);font-weight:700;font-size:clamp(44px,6vw,76px);line-height:.98;color:var(--ink)}
-.quote span{color:var(--accent)}
-.authority .lead{margin-top:22px}
-.diffs{list-style:none;margin:0;padding:0;display:grid;gap:0}
-.diffs li{display:grid;grid-template-columns:52px 1fr;gap:16px;padding:20px 0;border-bottom:1px solid var(--line)}
-.diffs li:first-child{border-top:1px solid var(--line)}
-.diffs .n{font-family:var(--display);font-weight:700;font-size:30px;color:var(--accent);line-height:1}
-.diffs h3{font-size:22px;margin-bottom:4px}
+/* autoridade: medidas da arte de referência (1806 px); --b = 1px da arte */
+.authority{--b:clamp(.52px, calc(100vw / 1806), 1.1px);--w-ink:#15122a;--w-text:#2c2a38;--w-purple:#8a168d;position:relative;overflow:hidden;padding:calc(var(--b) * 50) 0 0;background:linear-gradient(180deg,#f8f7fc 0%,#f7f4fb 100%)}
+.why-in{position:relative;z-index:1;max-width:calc(var(--b) * 1806);margin:0 auto;display:grid;grid-template-columns:calc(var(--b) * 878) minmax(0,1fr);align-items:start}
+.why-deco{position:absolute;top:0;right:0;width:calc(var(--b) * 330);height:calc(var(--b) * 130);pointer-events:none}
+.why-wave{position:absolute;left:0;right:0;bottom:0;height:calc(var(--b) * 90);pointer-events:none}
+.why-left{padding-left:calc(var(--b) * 123);display:flex;flex-direction:column}
+.why-eyebrow{display:flex;align-items:center;gap:calc(var(--b) * 22);font-family:"Plus Jakarta Sans",var(--body);font-weight:700;font-size:max(12.5px, calc(var(--b) * 21));letter-spacing:.04em;text-transform:uppercase;color:var(--w-purple)}
+.why-eyebrow::before{content:"";width:max(3px, calc(var(--b) * 4));height:max(16px, calc(var(--b) * 36));background:var(--w-purple)}
+.authority h2{margin-top:calc(var(--b) * 22);font-family:"Plus Jakarta Sans",var(--body);font-weight:800;font-size:max(34px, calc(var(--b) * 70));line-height:1.12;letter-spacing:-.025em;color:var(--w-ink)}
+.authority h2 span{color:var(--w-purple)}
+.why-lead{margin-top:calc(var(--b) * 16);font-family:"Plus Jakarta Sans",var(--body);font-weight:500;font-size:max(15px, calc(var(--b) * 22.5));line-height:1.5;color:var(--w-text);max-width:calc(var(--b) * 700)}
+.why-logos{display:flex;align-items:center;gap:calc(var(--b) * 44);margin-top:calc(var(--b) * 28);padding-left:calc(var(--b) * 17)}
+.why-logos img:first-child{height:max(34px, calc(var(--b) * 72));width:auto}
+.why-logos i{width:1.5px;height:calc(var(--b) * 82);background:#cfc6d6}
+.why-logos img:last-child{height:max(36px, calc(var(--b) * 70));width:auto}
+.why-photo{position:relative;margin-left:calc(var(--b) * -123);margin-top:calc(var(--b) * -14);width:calc(var(--b) * 872);aspect-ratio:872/413;-webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 18%),linear-gradient(90deg,#000 80%,transparent 100%);-webkit-mask-composite:source-in;mask-image:linear-gradient(180deg,transparent 0%,#000 18%),linear-gradient(90deg,#000 80%,transparent 100%);mask-composite:intersect}
+.why-photo img{width:100%;height:100%;object-fit:cover}
+
+.why-list{list-style:none;margin:calc(var(--b) * 50) 0 0;padding:0 calc(var(--b) * 108) 0 0;display:grid;gap:calc(var(--b) * 22)}
+.why-row{display:grid;grid-template-columns:calc(var(--b) * 184) auto minmax(0,1fr);align-items:center;min-height:max(78px, calc(var(--b) * 113));border-radius:calc(var(--b) * 18);background:linear-gradient(90deg,#ffffff 0%,#fbf9fd 55%,#f3ecf7 100%);box-shadow:0 calc(var(--b) * 14) calc(var(--b) * 30) calc(var(--b) * -14) rgba(70,30,90,.28),0 0 0 1px rgba(150,110,170,.12)}
+.why-ico{align-self:stretch;display:flex;align-items:center;justify-content:center;color:#fff;background:linear-gradient(140deg,#a52a9f 0%,#86178a 45%,#5f0f66 100%);clip-path:polygon(15% 0,100% 0,85% 100%,0 100%);border-radius:calc(var(--b) * 18) 0 0 calc(var(--b) * 18)}
+.why-ico svg{width:max(30px, calc(var(--b) * 62));height:max(30px, calc(var(--b) * 62))}
+.why-num{display:flex;align-items:center;align-self:center;height:calc(var(--b) * 62);padding:0 calc(var(--b) * 28) 0 calc(var(--b) * 26);border-right:1.5px solid #d4cbdc;font-family:"Plus Jakarta Sans",var(--body);font-weight:800;font-size:max(22px, calc(var(--b) * 38));color:var(--w-purple)}
+.why-txt{padding:calc(var(--b) * 12) calc(var(--b) * 24) calc(var(--b) * 12) calc(var(--b) * 28)}
+.why-txt h3{font-family:"Plus Jakarta Sans",var(--body);font-weight:800;font-size:max(17px, calc(var(--b) * 29));line-height:1.15;letter-spacing:-.015em;color:var(--w-ink)}
+.why-txt p{margin-top:calc(var(--b) * 4);font-family:"Plus Jakarta Sans",var(--body);font-weight:500;font-size:max(14px, calc(var(--b) * 21));line-height:1.35;color:var(--w-text)}
+
+@media (max-width:1023px){
+  .authority{padding-top:44px}
+  .why-in{grid-template-columns:1fr}
+  .why-left{padding:0 20px}
+  .why-eyebrow{font-size:13px}
+  .authority h2{font-size:clamp(34px,8vw,52px)}
+  .why-lead{font-size:16px;max-width:620px}
+  .why-logos{padding-left:0;gap:20px}
+  .why-logos i{height:44px}
+  .why-photo{margin-left:-20px;width:calc(100% + 40px);max-width:700px;margin-top:8px}
+  .why-list{order:2;margin:8px 0 56px;padding:0 20px;gap:14px;max-width:720px}
+  .why-row{grid-template-columns:76px auto minmax(0,1fr);border-radius:14px}
+  .why-ico{border-radius:14px 0 0 14px}
+  .why-ico svg{width:30px;height:30px}
+  .why-num{height:40px;padding:0 14px 0 12px;font-size:22px}
+  .why-txt{padding:12px 14px}
+  .why-txt h3{font-size:17px}
+  .why-txt p{font-size:14px;margin-top:3px}
+  .why-deco{display:none}
+  .why-wave{height:40px}
+}
 
 /* números */
 .numbers{background:var(--ink);color:#d9dbe0}
@@ -339,7 +377,7 @@ section{padding-block:clamp(56px,8vw,96px)}
 
 /* responsivo */
 @media (max-width:980px){
-  .authority .wrap,.faq .wrap,.contact .wrap{grid-template-columns:1fr}
+  .faq .wrap,.contact .wrap{grid-template-columns:1fr}
   .footer .wrap{grid-template-columns:1fr 1fr}
 }
 @media (max-width:640px){
@@ -613,19 +651,55 @@ section{padding-block:clamp(56px,8vw,96px)}
 </section>
 
 <!-- AUTORIDADE: FRASE + DIFERENCIAIS -->
-<section class="authority">
-  <div class="wrap">
-    <div>
-      <span class="eyebrow">Por que Markem-Imaje com a Brassell</span>
-      <p class="quote">Código legível, <span>linha sem erro.</span></p>
-      <p class="lead">Transforme seus processos com a marca de confiança global, vendida por quem conhece a indústria de ES, MG e RJ.</p>
+<section class="authority" aria-labelledby="why-title">
+  <svg class="why-deco" viewBox="0 0 330 130" preserveAspectRatio="none" aria-hidden="true" fill="none" stroke="#c9a6d4" stroke-opacity=".55" stroke-width="1">
+    <path d="M0 0C90 30 200 60 330 70"/><path d="M30 0C120 28 220 50 330 56"/><path d="M60 0C150 26 240 40 330 42"/><path d="M90 0C175 22 255 30 330 30"/><path d="M120 0C200 18 270 22 330 20"/><path d="M150 0C220 14 285 14 330 11"/>
+  </svg>
+  <svg class="why-wave" viewBox="0 0 1806 90" preserveAspectRatio="none" aria-hidden="true">
+    <defs><linearGradient id="whyw" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#b673c4" stop-opacity="0"/><stop offset=".45" stop-color="#a650b4" stop-opacity=".55"/><stop offset="1" stop-color="#6a1278"/></linearGradient></defs>
+    <path d="M900 90C1150 70 1400 15 1806 10V90Z" fill="url(#whyw)"/>
+    <path d="M1100 90C1350 78 1550 50 1806 46V90Z" fill="#7b1789" opacity=".55"/>
+  </svg>
+
+  <div class="why-in">
+    <div class="why-left">
+      <span class="why-eyebrow">Por que Markem-Imaje com a Brassell</span>
+      <h2 id="why-title">Código legível,<br> <span>linha sem erro.</span></h2>
+      <p class="why-lead">Transforme seus processos com a marca de confiança global, vendida por quem conhece a indústria de ES, MG e RJ.</p>
+      <div class="why-logos">
+        <img src="assets/img/logo-markem-h.webp" alt="Markem-Imaje" width="320" height="72" loading="lazy">
+        <i aria-hidden="true"></i>
+        <img src="assets/img/logo-brassell.png" alt="Brassell" width="203" height="70" loading="lazy">
+      </div>
+      <div class="why-photo" aria-hidden="true"><img src="assets/img/why-linha.jpg" alt="" width="872" height="413" loading="lazy"></div>
     </div>
-    <ol class="diffs">
-      <li><span class="n">01</span><div><h3>Distribuidor oficial</h3><p>Markem-Imaje oficial em MG, RJ e ES.</p></div></li>
-      <li><span class="n">02</span><div><h3>Tecnologia de ponta</h3><p>Sistemas modernos, com alta performance e confiabilidade.</p></div></li>
-      <li><span class="n">03</span><div><h3>Conformidade regulamentar</h3><p>Códigos dentro das normas locais e internacionais, com rastreabilidade garantida.</p></div></li>
-      <li><span class="n">04</span><div><h3>Suporte especializado</h3><p>Orientação na escolha do equipamento certo.</p></div></li>
-      <li><span class="n">05</span><div><h3>Atendimento próximo</h3><p>Unidades em Belo Horizonte e no Rio de Janeiro.</p></div></li>
+
+    <ol class="why-list">
+      <li class="why-row">
+        <span class="why-ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l7-4 6 3"/><path d="M45 17l-7-4-8 4-7-2-6 5c-1.3 1.2-.6 3.4 1.2 3.4 1 0 2-.4 2.7-1l3.6-2.8 10 8.6"/><path d="M3 17l3 13 3 1"/><path d="M45 17l-3 13-4 2"/><path d="M9 31l3.5 3.2a2.3 2.3 0 0 0 3.4-3.1L13 28"/><path d="M15.8 31.2l3 2.8a2.3 2.3 0 0 0 3.4-3.1l-2.9-3"/><path d="M22.2 34.1l2 1.8a2.3 2.3 0 0 0 3.4-3.1L25 30.3"/><path d="M27.6 35.9l1.4 1.2a2.3 2.3 0 0 0 3.3-3.2l-2.5-2.6M38 32l-6-6.5"/></svg></span>
+        <span class="why-num">01</span>
+        <div class="why-txt"><h3>Distribuidor oficial</h3><p>Markem-Imaje oficial em MG, RJ e ES.</p></div>
+      </li>
+      <li class="why-row">
+        <span class="why-ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 4h7l1.2 5.2 3.6 1.5 4.6-2.8 5 5-2.8 4.6 1.5 3.6L44 20.5v7l-5.2 1.2-1.5 3.6 2.8 4.6-5 5-4.6-2.8-3.6 1.5L27.5 44h-7l-1.2-5.2-3.6-1.5-4.6 2.8-5-5 2.8-4.6-1.5-3.6L4 27.5v-7l5.2-1.2 1.5-3.6-2.8-4.6 5-5 4.6 2.8 3.6-1.5z"/><circle cx="24" cy="24" r="7.5"/></svg></span>
+        <span class="why-num">02</span>
+        <div class="why-txt"><h3>Tecnologia de ponta</h3><p>Sistemas modernos, com alta performance e confiabilidade.</p></div>
+      </li>
+      <li class="why-row">
+        <span class="why-ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 4l16 6v11c0 10-6.8 18-16 22-9.2-4-16-12-16-22V10z"/><path d="M16.5 24l5.5 5.5 10-11"/></svg></span>
+        <span class="why-num">03</span>
+        <div class="why-txt"><h3>Conformidade regulamentar</h3><p>Códigos dentro das normas locais e internacionais, com rastreabilidade garantida.</p></div>
+      </li>
+      <li class="why-row">
+        <span class="why-ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="24" cy="21" r="9"/><path d="M10 26v-5a14 14 0 0 1 28 0v5"/><rect x="7" y="22" width="6" height="10" rx="2.5"/><rect x="35" y="22" width="6" height="10" rx="2.5"/><path d="M38 32c0 5-4 8-9 8h-3"/><path d="M14 44c1-5 5-8 10-8s9 3 10 8"/></svg></span>
+        <span class="why-num">04</span>
+        <div class="why-txt"><h3>Suporte especializado</h3><p>Orientação na escolha do equipamento certo.</p></div>
+      </li>
+      <li class="why-row">
+        <span class="why-ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" aria-hidden="true"><path d="M24 44S10 29.6 10 19a14 14 0 0 1 28 0c0 10.6-14 25-14 25z"/><circle cx="24" cy="19" r="6"/></svg></span>
+        <span class="why-num">05</span>
+        <div class="why-txt"><h3>Atendimento próximo</h3><p>Unidades em Belo Horizonte e no Rio de Janeiro.</p></div>
+      </li>
     </ol>
   </div>
 </section>
