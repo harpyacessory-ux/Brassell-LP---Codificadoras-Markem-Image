@@ -64,8 +64,8 @@ section{padding-block:clamp(56px,8vw,96px)}
 
 .hero{--h-ink:#1b1830;--h-purple:#8a168d;position:relative;overflow:hidden;padding:0;background:#f3edf8;min-height:calc(var(--u) * 904)}
 .hero-media{position:absolute;inset:0;overflow:hidden}
-.hero-stage{position:absolute;top:0;right:0;height:100%;aspect-ratio:1740/904}
-.hero-stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero-stage{position:absolute;top:0;right:0;height:100%;aspect-ratio:1740/904;min-width:100%}
+.hero-stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:right center}
 .hero-overlay{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
 .hero-copy{position:relative;z-index:2;padding:calc(var(--u) * 163) 0 calc(var(--u) * 66) max(20px, calc(var(--u) * 116))}
 .hero-pill{display:inline-block;font-family:"Plus Jakarta Sans",var(--body);font-weight:800;font-size:calc(var(--u) * 16.5);line-height:1.3;letter-spacing:.155em;text-transform:uppercase;color:var(--h-purple);border:max(1.5px, calc(var(--u) * 2)) solid var(--h-purple);border-radius:999px;padding:calc(var(--u) * 5) calc(var(--u) * 22)}
@@ -111,17 +111,70 @@ section{padding-block:clamp(56px,8vw,96px)}
 }
 
 /* selos */
-.seals{background:var(--ink);color:#fff;padding-block:22px}
-.seals ul{list-style:none;margin:0;padding:0;display:flex;justify-content:space-between;gap:16px 32px;flex-wrap:wrap}
-.seals li{display:flex;align-items:center;gap:12px;font-family:var(--display);font-weight:600;font-size:19px;letter-spacing:.02em}
-.seals svg{width:26px;height:26px;flex:none;color:#e9b8e3}
+/* selos + linhas de produto: medidas da arte de referência (2038 px); --v = 1px da arte */
+.equip{--v:clamp(.5px, calc(100vw / 2038), 1.1px);--e-ink:#1b1830;--e-purple:#8a168d;position:relative;overflow:hidden;padding:0 0 calc(var(--v) * 40);background:linear-gradient(180deg,#f7f3fb 0%,#f2edf8 60%,#f6f2fb 100%)}
+.equip-photo{position:absolute;top:0;right:0;width:calc(var(--v) * 950);height:calc(var(--v) * 456);-webkit-mask-image:linear-gradient(180deg,#000 88%,transparent),linear-gradient(90deg,transparent,#000 7%);-webkit-mask-composite:source-in;mask-image:linear-gradient(180deg,#000 88%,transparent),linear-gradient(90deg,transparent,#000 7%);mask-composite:intersect}
+.equip-photo img{width:100%;height:100%;object-fit:cover;object-position:right top}
+.seals{position:relative;z-index:2;color:#fff;height:max(40px, calc(var(--v) * 72))}
+.seals-fill{position:absolute;top:0;bottom:0;left:0;right:calc(var(--v) * 461 - 1px);background:linear-gradient(90deg,#7a128c 0%,#4a0f5b 22%,#33103f 45%,#2e1342 100%)}
+.seals-cap{position:absolute;top:0;right:calc(var(--v) * 373);width:calc(var(--v) * 88);height:100%}
+.seals ul{position:relative;list-style:none;margin:0;padding:0 0 0 calc(var(--v) * 205);height:100%;display:flex;align-items:center}
+.seals li{display:flex;align-items:center;gap:calc(var(--v) * 18);padding-inline:calc(var(--v) * 85);font-family:"Barlow Semi Condensed",var(--display);font-weight:600;font-size:max(13px, calc(var(--v) * 21.5));white-space:nowrap}
+.seals li:first-child{padding-left:0}
+.seals li+li{border-left:1.5px solid rgba(255,255,255,.35);height:calc(var(--v) * 44)}
+.seals svg{width:max(20px, calc(var(--v) * 34));height:max(20px, calc(var(--v) * 34));flex:none;color:#fff}
+
+.equip-head{position:relative;z-index:1;padding:calc(var(--v) * 52) 0 0 calc(var(--v) * 185);max-width:calc(var(--v) * 1100)}
+.equip h2 br.d{display:inline}
+.equip-eyebrow{display:flex;align-items:center;gap:calc(var(--v) * 20);font-family:var(--display);font-weight:700;font-size:max(13px, calc(var(--v) * 21));letter-spacing:.2em;text-transform:uppercase;color:var(--e-purple)}
+.equip-eyebrow::after{content:"";width:calc(var(--v) * 100);height:2px;background:var(--e-purple)}
+.equip h2{font-family:"Plus Jakarta Sans",var(--body);font-weight:700;font-size:max(27px, calc(var(--v) * 50));line-height:1.12;letter-spacing:-.025em;color:var(--e-ink);margin-top:calc(var(--v) * 22)}
+.equip h2 em{font-style:normal;color:var(--e-purple)}
+.equip-lead{margin-top:calc(var(--v) * 26);padding-left:calc(var(--v) * 28);border-left:max(3px, calc(var(--v) * 6)) solid var(--e-purple);font-family:"Plus Jakarta Sans",var(--body);font-weight:500;font-size:max(15px, calc(var(--v) * 20));line-height:1.55;color:#3a3646;max-width:calc(var(--v) * 880)}
+
+.equip-cards{position:relative;z-index:2;display:grid;grid-template-columns:570fr 574fr 596fr;gap:calc(var(--v) * 22);padding-inline:calc(var(--v) * 130) calc(var(--v) * 124);margin-top:calc(var(--v) * 60)}
+.tech-card{display:grid;grid-template-columns:calc(var(--v) * 216) minmax(0,1fr);gap:calc(var(--v) * 32);padding:calc(var(--v) * 16) calc(var(--v) * 24) calc(var(--v) * 16) calc(var(--v) * 16);background:#fdfcfe;border-radius:calc(var(--v) * 28);box-shadow:0 calc(var(--v) * 22) calc(var(--v) * 50) calc(var(--v) * -18) rgba(90,40,110,.24),0 0 0 1px rgba(140,90,160,.06)}
+.tech-card img{width:100%;aspect-ratio:216/241;object-fit:cover;border-radius:calc(var(--v) * 22);align-self:start}
+.tech-body{padding-top:calc(var(--v) * 12);display:flex;flex-direction:column;align-items:flex-start}
+.tech-tag{font-family:var(--display);font-weight:700;font-size:max(13px, calc(var(--v) * 20));letter-spacing:.06em;text-transform:uppercase;color:var(--e-purple)}
+.tech-card h3{font-family:var(--display);font-weight:700;font-size:max(20px, calc(var(--v) * 31));line-height:1.1;color:var(--e-ink);margin-top:calc(var(--v) * 6)}
+.tech-card p{font-family:"Plus Jakarta Sans",var(--body);font-weight:500;font-size:max(14px, calc(var(--v) * 18.5));line-height:1.45;color:#3a3646;margin-top:calc(var(--v) * 12)}
+.tech-btn{margin-top:auto;display:inline-flex;align-items:center;gap:calc(var(--v) * 14);height:max(38px, calc(var(--v) * 46));padding:0 max(16px, calc(var(--v) * 24));border:2px solid var(--e-purple);border-radius:999px;font-family:var(--display);font-weight:700;font-size:max(15px, calc(var(--v) * 20.5));letter-spacing:.02em;text-transform:uppercase;color:var(--e-purple);text-decoration:none;transition:background .15s,color .15s}
+.tech-btn svg{width:max(16px, calc(var(--v) * 24));height:max(16px, calc(var(--v) * 24))}
+.tech-btn:hover{background:var(--e-purple);color:#fff}
+.tech-card p + .tech-btn{margin-top:max(14px, calc(var(--v) * 26))}
+.vitrine{padding-top:clamp(8px,2vw,32px)}
+
+@media (max-width:1023px){
+  .equip{display:flex;flex-direction:column;padding-bottom:48px}
+  .seals{order:0;height:auto}
+  .seals-fill{right:0}
+  .seals-cap{display:none}
+  .seals ul{flex-direction:column;align-items:flex-start;padding:18px 20px;gap:12px}
+  .seals li,.seals li+li{padding:0;border:0;height:auto;font-size:17px;gap:12px;white-space:normal}
+  .seals svg{width:24px;height:24px}
+  .equip-head{order:1;padding:40px 20px 0;max-width:none}
+  .equip-eyebrow::after{width:60px}
+  .equip h2{font-size:clamp(27px,6.4vw,40px);margin-top:14px}
+  .equip-lead{font-size:16px;margin-top:18px;padding-left:16px;max-width:680px}
+  .equip h2 br.d{display:none}
+  .equip-photo{order:2;position:relative;right:auto;width:auto;height:auto;min-height:0;overflow:hidden;aspect-ratio:950/380;margin-top:28px;-webkit-mask-image:none;mask-image:none}
+  .equip-photo img{position:absolute;inset:0}
+  .equip-photo img{object-position:right bottom}
+  .equip-cards{order:3;grid-template-columns:1fr;gap:16px;padding-inline:20px;margin-top:24px;max-width:720px}
+  .tech-card{grid-template-columns:132px minmax(0,1fr);gap:18px;padding:12px 16px 14px 12px;border-radius:20px;box-shadow:0 14px 34px -16px rgba(90,40,110,.3),0 0 0 1px rgba(140,90,160,.06)}
+  .tech-card img{border-radius:14px}
+  .tech-body{padding-top:4px}
+  .tech-card h3{font-size:22px}
+  .tech-card p{font-size:15px;margin-top:6px}
+  .tech-card p + .tech-btn{margin-top:14px}
+  .tech-btn{height:38px;font-size:15px;padding:0 16px;gap:10px}
+}
+@media (max-width:420px){
+  .tech-card{grid-template-columns:104px minmax(0,1fr);gap:14px}
+}
 
 /* linhas */
-.lines{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.line-card{border:1px solid var(--line);border-radius:var(--radius);padding:28px;background:var(--white);display:flex;flex-direction:column;gap:12px}
-.line-card .tag{font-family:var(--display);font-weight:700;font-size:14px;letter-spacing:.12em;color:var(--accent);text-transform:uppercase}
-.line-card p{color:var(--text)}
-.line-card a{margin-top:auto;padding-top:8px}
 
 /* vitrine */
 .shelf{margin-top:56px}
@@ -202,13 +255,11 @@ section{padding-block:clamp(56px,8vw,96px)}
 /* responsivo */
 @media (max-width:980px){
   .authority .wrap,.faq .wrap,.contact .wrap{grid-template-columns:1fr}
-  .lines{grid-template-columns:1fr}
   .apps{grid-template-columns:repeat(2,1fr)}
   .footer .wrap{grid-template-columns:1fr 1fr}
 }
 @media (max-width:640px){
   body{font-size:16px}
-  .seals ul{flex-direction:column}
   .apps{grid-template-columns:1fr}
   .nums{grid-template-columns:1fr}
   .num,.num+.num{padding:24px 0;border-left:0}
@@ -245,7 +296,7 @@ section{padding-block:clamp(56px,8vw,96px)}
   <div class="hero-media">
     <div class="hero-stage">
       <img src="assets/img/hero-bg.jpg" alt="Impressora industrial Markem-Imaje de jato de tinta contínuo ao lado de garrafas codificadas com QR Code na linha de produção" width="1740" height="904" fetchpriority="high">
-      <svg class="hero-overlay" viewBox="0 0 1740 904" aria-hidden="true">
+      <svg class="hero-overlay" viewBox="0 0 1740 904" preserveAspectRatio="xMaxYMid slice" aria-hidden="true">
         <!-- modelo na faixa da máquina -->
         <text transform="translate(1196 567) rotate(-90)" font-family="'Plus Jakarta Sans','Segoe UI',sans-serif" font-weight="800" font-size="50" letter-spacing="-1" fill="#8a168d">9450</text>
         <!-- código impresso no rótulo da garrafa -->
@@ -297,46 +348,60 @@ section{padding-block:clamp(56px,8vw,96px)}
   </div>
 </section>
 
-<!-- SELOS DE CONFIANÇA -->
-<div class="seals">
-  <div class="wrap">
+<!-- SELOS DE CONFIANÇA + OFERTA: LINHAS DE PRODUTO -->
+<section class="equip" id="equipamentos">
+  <div class="equip-photo" aria-hidden="true"><img src="assets/img/equip-linha.jpg" alt="" width="950" height="456" loading="lazy"></div>
+
+  <div class="seals">
+    <div class="seals-fill"></div>
+    <svg class="seals-cap" viewBox="0 0 88 72" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0H88L48 54Q34 72 8 72H0Z" fill="#2e1342"/></svg>
     <ul>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Atendimento em ES, MG e RJ</li>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>Equipamentos originais Markem-Imaje</li>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 21h18M5 21V8l7-4 7 4v13M9 21v-6h6v6"/></svg>Unidades em BH e Rio</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 21.5s-7-6.4-7-12A7 7 0 0 1 19 9.5c0 5.6-7 12-7 12z"/><circle cx="12" cy="9.5" r="2.6"/></svg>Atendimento em ES, MG e RJ</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 2.5l8 3.2v5.5c0 5-3.4 9-8 10.8-4.6-1.8-8-5.8-8-10.8V5.7z"/><path d="M8.3 12.2l2.7 2.7 5-5.4"/></svg>Equipamentos originais Markem-Imaje</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M2.5 21.5h19M4.5 21.5V9L12 3.5 19.5 9v12.5"/><path d="M9 21.5v-7h6v7"/></svg>Unidades em BH e Rio</li>
     </ul>
   </div>
-</div>
 
-<!-- OFERTA: LINHAS DE PRODUTO + VITRINE -->
-<section id="equipamentos">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">Equipamentos</span>
-      <h2>Soluções para marcação, codificação e rastreabilidade industrial</h2>
-      <p class="lead">Equipamentos de codificação para linha de produção, para indústrias de alimentos, bebidas, farmacêuticos e eletrônicos. Três tecnologias Markem-Imaje, cada uma para um tipo de embalagem e velocidade de linha.</p>
-    </div>
+  <div class="equip-head">
+    <span class="equip-eyebrow">Equipamentos</span>
+    <h2>Soluções para <em>marcação, codificação</em><br class="d"> e <em>rastreabilidade</em> industrial</h2>
+    <p class="equip-lead">Equipamentos de codificação para linha de produção, para indústrias de alimentos, bebidas, farmacêuticos e eletrônicos. Três tecnologias Markem-Imaje, cada uma para um tipo de embalagem e velocidade de linha.</p>
+  </div>
 
-    <div class="lines">
-      <article class="line-card">
-        <span class="tag">CIJ</span>
+  <div class="equip-cards">
+    <article class="tech-card">
+      <img src="assets/img/card-cij.jpg" alt="Data de validade e lote impressos em tampa plástica" width="218" height="243" loading="lazy">
+      <div class="tech-body">
+        <span class="tech-tag">CIJ</span>
         <h3>Jato de Tinta Contínuo</h3>
         <p>Precisão inigualável em altas velocidades para uma ampla gama de materiais.</p>
-        <a class="btn btn-ghost" href="#cij">Ver 5 modelos →</a>
-      </article>
-      <article class="line-card">
-        <span class="tag">TTO</span>
+        <a class="tech-btn" href="#cij">Ver 5 modelos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M3 12h17M14 6l6 6-6 6"/></svg></a>
+      </div>
+    </article>
+    <article class="tech-card">
+      <img src="assets/img/card-tto.jpg" alt="Lote, validade e QR Code impressos em embalagem flexível" width="217" height="243" loading="lazy">
+      <div class="tech-body">
+        <span class="tech-tag">TTO</span>
         <h3>Transferência Térmica</h3>
         <p>Ideal para embalagens flexíveis, garantindo qualidade superior em codificação.</p>
-        <a class="btn btn-ghost" href="#tto">Ver 4 modelos →</a>
-      </article>
-      <article class="line-card">
-        <span class="tag">Print &amp; Apply</span>
+        <a class="tech-btn" href="#tto">Ver 4 modelos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M3 12h17M14 6l6 6-6 6"/></svg></a>
+      </div>
+    </article>
+    <article class="tech-card">
+      <img src="assets/img/card-pa.jpg" alt="Etiqueta com lote, validade e código de barras aplicada em caixa de papelão" width="218" height="243" loading="lazy">
+      <div class="tech-body">
+        <span class="tech-tag">Print &amp; Apply</span>
         <h3>Etiquetagem automática</h3>
         <p>Perfeição no posicionamento e aplicação de etiquetas para embalagens de todos os tamanhos.</p>
-        <a class="btn btn-ghost" href="#pa">Ver 3 modelos →</a>
-      </article>
-    </div>
+        <a class="tech-btn" href="#pa">Ver 3 modelos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M3 12h17M14 6l6 6-6 6"/></svg></a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- OFERTA: VITRINE -->
+<section class="vitrine" aria-label="Modelos Markem-Imaje">
+  <div class="wrap">
 
     <div class="shelf" id="cij">
       <div class="shelf-head"><h3>Impressoras de jato de tinta contínuo (CIJ)</h3><span>5 modelos</span></div>
