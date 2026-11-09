@@ -470,6 +470,22 @@ section{padding-block:clamp(56px,8vw,96px)}
 @media (max-width:640px){
   body{font-size:16px}
 }
+
+/* divisões arredondadas: cada seção tem cantos inferiores curvos e fica sobre a seguinte,
+   que sobe por baixo da curva (a borda transparente reserva o espaço sem mexer no padding) */
+:root{--round:clamp(26px, 3.2vw, 64px)}
+main > section,.footer{position:relative;background-origin:border-box}
+main > section{border-radius:0 0 var(--round) var(--round);box-shadow:0 18px 36px -22px rgba(40,10,60,.35)}
+main > section + section,.footer{margin-top:calc(var(--round) * -1);border-top:var(--round) solid transparent}
+main > section:nth-of-type(1){z-index:9}
+main > section:nth-of-type(2){z-index:8}
+main > section:nth-of-type(3){z-index:7}
+main > section:nth-of-type(4){z-index:6}
+main > section:nth-of-type(5){z-index:5}
+main > section:nth-of-type(6){z-index:4}
+main > section:nth-of-type(7){z-index:3}
+main > section:nth-of-type(8){z-index:2}
+.footer{z-index:1}
 </style>
 </head>
 <body>
