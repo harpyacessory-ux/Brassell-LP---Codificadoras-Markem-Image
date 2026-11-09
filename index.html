@@ -337,25 +337,69 @@ section{padding-block:clamp(56px,8vw,96px)}
   .why-wave{height:40px}
 }
 
-/* números */
-.numbers{background:var(--ink);color:#d9dbe0}
-.numbers .section-head h2{color:#fff}
-.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid #3a3f49}
-.num{padding:32px 28px 8px 0}
-.num+.num{padding-left:28px;border-left:1px solid #3a3f49}
-.num strong{display:block;font-family:var(--display);font-weight:700;font-size:clamp(56px,7vw,88px);color:#fff;line-height:1}
-.num strong sup{font-size:.5em;color:#e9b8e3;vertical-align:top;position:relative;top:.15em}
-.num span{display:block;margin-top:10px;font-size:17px}
+/* números + faq: medidas da arte de referência (1774 px); --n = 1px da arte */
+.numbers,.faq{--n:clamp(.52px, calc(100vw / 1774), 1.1px);--f-ink:#15122a;--f-text:#2d2a3d;--f-purple:#8a168d}
+.numbers{position:relative;overflow:hidden;padding:calc(var(--n) * 38) 0 calc(var(--n) * 34);color:#fff;background:radial-gradient(120% 140% at 100% 100%,#7a1c96 0%,rgba(122,28,150,0) 55%),linear-gradient(100deg,#1a0a26 0%,#2b0b3e 40%,#3e0c58 70%,#561277 100%)}
+.nb-deco{position:absolute;top:0;right:0;width:calc(var(--n) * 1100);height:100%;pointer-events:none}
+.nb-in,.fq-in{position:relative;z-index:1;max-width:calc(var(--n) * 1774);margin:0 auto;padding-left:calc(var(--n) * 128)}
+.nb-eyebrow{display:flex;align-items:center;gap:calc(var(--n) * 16);font-family:"Plus Jakarta Sans",var(--body);font-weight:600;font-size:max(12px, calc(var(--n) * 15.5));letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.85)}
+.nb-eyebrow::after{content:"";width:calc(var(--n) * 66);height:2px;background:linear-gradient(90deg,#c46be0,rgba(196,107,224,0))}
+.numbers h2{margin-top:calc(var(--n) * 10);font-family:"Plus Jakarta Sans",var(--body);font-weight:800;font-size:max(30px, calc(var(--n) * 55));line-height:.98;letter-spacing:-.025em;color:#fff}
+.numbers h2 span{background:linear-gradient(90deg,#e6b5f5 0%,#c97ae6 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.nums{list-style:none;margin:calc(var(--n) * 32) 0 0;padding:0;display:flex}
+.num{display:grid;grid-template-columns:max-content minmax(0,1fr);justify-content:start;align-content:start;column-gap:calc(var(--n) * 20);align-items:start;padding:calc(var(--n) * 4) calc(var(--n) * 36) calc(var(--n) * 4) 0;min-width:calc(var(--n) * 270)}
+.num+.num{padding-left:calc(var(--n) * 42);border-left:1.5px solid rgba(255,255,255,.28)}
+.num svg{grid-row:span 2;width:max(30px, calc(var(--n) * 52));height:max(30px, calc(var(--n) * 52));color:#d07ef0;margin-top:calc(var(--n) * 10)}
+.num strong{display:block;font-family:"Plus Jakarta Sans",var(--body);font-weight:800;font-size:max(40px, calc(var(--n) * 68));line-height:1;letter-spacing:-.02em;color:#fff}
+.num strong sup{font-size:.6em;color:#e1a2f5;vertical-align:top;position:relative;top:-.1em;margin-left:.04em}
+.num span{display:block;margin-top:calc(var(--n) * 14);font-family:"Plus Jakarta Sans",var(--body);font-weight:500;font-size:max(13.5px, calc(var(--n) * 17.5));line-height:1.3;color:rgba(255,255,255,.92);max-width:calc(var(--n) * 230)}
 
-/* faq */
-.faq .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:start}
-.faq details{border-bottom:1px solid var(--line)}
-.faq details:first-of-type{border-top:1px solid var(--line)}
-.faq summary{list-style:none;cursor:pointer;padding:22px 44px 22px 0;position:relative;font-family:var(--display);font-weight:600;font-size:22px;color:var(--ink);line-height:1.2}
+.faq{position:relative;overflow:hidden;padding:calc(var(--n) * 40) 0 calc(var(--n) * 70);background:linear-gradient(180deg,#f8f6fb 0%,#f6f3fa 100%)}
+.fq-wave{position:absolute;left:0;bottom:0;width:calc(var(--n) * 720);height:calc(var(--n) * 180);pointer-events:none}
+.fq-in{display:grid;grid-template-columns:calc(var(--n) * 593) minmax(0,1fr);align-items:start;padding-right:calc(var(--n) * 127)}
+.fq-head{padding-top:calc(var(--n) * 36);padding-right:calc(var(--n) * 30)}
+.fq-eyebrow{display:flex;align-items:center;gap:calc(var(--n) * 14);font-family:"Plus Jakarta Sans",var(--body);font-weight:800;font-size:max(12.5px, calc(var(--n) * 17));text-transform:uppercase;color:var(--f-purple)}
+.fq-eyebrow::after{content:"";width:calc(var(--n) * 44);height:2px;background:var(--f-purple)}
+.faq h2{margin-top:calc(var(--n) * 18);font-family:"Plus Jakarta Sans",var(--body);font-weight:800;font-size:max(28px, calc(var(--n) * 48));line-height:1.04;letter-spacing:-.022em;color:var(--f-ink)}
+.fq-sub{margin-top:calc(var(--n) * 30);font-family:"Plus Jakarta Sans",var(--body);font-weight:500;font-size:max(15px, calc(var(--n) * 21));line-height:1.3;color:var(--f-text);max-width:calc(var(--n) * 450)}
+.fq-list{display:grid;gap:calc(var(--n) * 7)}
+.faq details{position:relative;border-radius:calc(var(--n) * 14);background:#fff;box-shadow:0 calc(var(--n) * 8) calc(var(--n) * 20) calc(var(--n) * -10) rgba(70,30,90,.3),0 0 0 1px rgba(150,110,170,.12);transition:background .2s}
+.faq details[open]{background:linear-gradient(90deg,#f1e2f8 0%,#ecdaf5 100%);box-shadow:0 calc(var(--n) * 10) calc(var(--n) * 24) calc(var(--n) * -10) rgba(110,30,140,.35),0 0 0 1.5px #d7b5e7}
+.faq summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:calc(var(--n) * 12);min-height:max(44px, calc(var(--n) * 44));padding:0 calc(var(--n) * 24) 0 calc(var(--n) * 112)}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"";position:absolute;right:6px;top:50%;width:12px;height:12px;border-right:2px solid var(--accent);border-bottom:2px solid var(--accent);transform:translateY(-70%) rotate(45deg);transition:transform .2s}
-.faq details[open] summary::after{transform:translateY(-30%) rotate(-135deg)}
-.faq details p{padding:0 44px 24px 0}
+.faq summary::after{display:none}
+.fq-ico{position:absolute;left:0;top:0;bottom:0;width:calc(var(--n) * 112);display:flex;align-items:center;justify-content:center;color:var(--f-purple);pointer-events:none}
+.fq-ico::after{content:"";position:absolute;right:0;top:50%;transform:translateY(-50%);width:1.5px;height:calc(var(--n) * 26);min-height:18px;max-height:60%;background:#8f8a99}
+.faq details[open] .fq-ico::after{height:58%}
+.fq-ico svg{width:max(22px, calc(var(--n) * 36));height:max(22px, calc(var(--n) * 36))}
+.fq-q{flex:1;padding:calc(var(--n) * 10) 0 calc(var(--n) * 10) calc(var(--n) * 24);font-family:"Plus Jakarta Sans",var(--body);font-weight:800;font-size:max(14.5px, calc(var(--n) * 19));line-height:1.25;letter-spacing:-.01em;color:var(--f-ink)}
+.fq-chev{flex:none;width:max(16px, calc(var(--n) * 22));height:max(16px, calc(var(--n) * 22));color:var(--f-purple);transition:transform .2s}
+.faq details[open] .fq-chev{transform:rotate(180deg)}
+.faq details[open] .fq-q{padding-top:calc(var(--n) * 14);padding-bottom:calc(var(--n) * 2)}
+.fq-a{margin:0;padding:0 calc(var(--n) * 160) calc(var(--n) * 14) calc(var(--n) * 136);font-family:"Plus Jakarta Sans",var(--body);font-weight:500;font-size:max(14px, calc(var(--n) * 16.5));line-height:1.4;color:var(--f-text)}
+@media (max-width:1023px){
+  .numbers{padding:44px 0 40px}
+  .nb-in,.fq-in{padding-left:20px;padding-right:20px}
+  .nb-deco{opacity:.55;width:100%}
+  .numbers h2{font-size:clamp(30px,7vw,44px)}
+  .nums{flex-direction:column;margin-top:26px}
+  .num,.num+.num{padding:16px 0;border-left:0;min-width:0}
+  .num+.num{border-top:1px solid rgba(255,255,255,.2)}
+  .num svg{width:36px;height:36px}
+  .num strong{font-size:44px}
+  .num span{max-width:none;font-size:15px;margin-top:6px}
+  .faq{padding:44px 0 72px}
+  .fq-in{grid-template-columns:1fr;gap:26px}
+  .fq-head{padding:0}
+  .faq h2{font-size:clamp(28px,6.6vw,40px)}
+  .fq-sub{font-size:16px;margin-top:14px;max-width:560px}
+  .fq-list{gap:10px;max-width:720px}
+  .faq summary{padding:0 14px 0 56px}
+  .fq-ico{width:56px}
+  .fq-q{font-size:15px;padding:12px 10px 12px 14px}
+  .fq-a{font-size:14.5px;padding:0 16px 14px 70px}
+  .fq-wave{width:70%;height:90px}
+}
 
 /* contato */
 .contact{background:var(--accent);color:#fff}
@@ -377,14 +421,11 @@ section{padding-block:clamp(56px,8vw,96px)}
 
 /* responsivo */
 @media (max-width:980px){
-  .faq .wrap,.contact .wrap{grid-template-columns:1fr}
+  .contact .wrap{grid-template-columns:1fr}
   .footer .wrap{grid-template-columns:1fr 1fr}
 }
 @media (max-width:640px){
   body{font-size:16px}
-  .nums{grid-template-columns:1fr}
-  .num,.num+.num{padding:24px 0;border-left:0}
-  .num+.num{border-top:1px solid #3a3f49}
   .footer .wrap{grid-template-columns:1fr}
 }
 </style>
@@ -705,56 +746,83 @@ section{padding-block:clamp(56px,8vw,96px)}
 </section>
 
 <!-- PROVA: NÚMEROS -->
-<section class="numbers">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow" style="color:#e9b8e3">Brassell em números</span>
-      <h2>Experiência em automação industrial</h2>
-    </div>
-    <div class="nums">
-      <div class="num"><strong>30<sup>+</sup></strong><span>anos em automação industrial</span></div>
-      <div class="num"><strong>3</strong><span>estados com distribuição oficial Markem-Imaje: ES, MG e RJ</span></div>
-      <div class="num"><strong>2</strong><span>unidades: Belo Horizonte e Rio de Janeiro</span></div>
-    </div>
+<section class="numbers" aria-labelledby="nb-title">
+  <svg class="nb-deco" viewBox="0 0 1100 377" preserveAspectRatio="xMaxYMid slice" aria-hidden="true">
+    <defs>
+      <linearGradient id="nbw" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#9a2fc0" stop-opacity="0"/><stop offset=".5" stop-color="#b54ad8" stop-opacity=".55"/><stop offset="1" stop-color="#e2a0f5" stop-opacity=".9"/></linearGradient>
+      <linearGradient id="nbl" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#d48ef0" stop-opacity="0"/><stop offset=".6" stop-color="#d48ef0" stop-opacity=".5"/><stop offset="1" stop-color="#e9b8f8" stop-opacity=".8"/></linearGradient>
+    </defs>
+    <path d="M250 377C520 330 700 190 1100 95V377Z" fill="url(#nbw)" opacity=".5"/>
+    <path d="M420 377C640 345 820 250 1100 205V377Z" fill="#7a1c96" opacity=".55"/>
+    <g fill="none" stroke="url(#nbl)" stroke-width="1">
+      <path d="M300 377C560 300 760 120 1100 30"/><path d="M330 377C590 300 790 130 1100 48"/><path d="M360 377C620 302 820 142 1100 66"/><path d="M390 377C650 305 850 156 1100 84"/><path d="M420 377C680 310 880 172 1100 102"/><path d="M450 377C710 316 910 190 1100 120"/><path d="M480 377C740 322 940 208 1100 138"/>
+    </g>
+  </svg>
+  <div class="nb-in">
+    <span class="nb-eyebrow">Brassell em números</span>
+    <h2 id="nb-title">Experiência em<br> <span>automação industrial</span></h2>
+    <ul class="nums">
+      <li class="num">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="8" width="34" height="32" rx="4"/><path d="M4 17h34M13 4v8M29 4v8"/><path d="M11 24h3M18 24h3M25 24h3M11 31h3M18 31h3"/><circle cx="37" cy="37" r="8" fill="#2b0b3e"/><path d="M37 33v4l2.5 2"/></svg>
+        <strong>30<sup>+</sup></strong>
+        <span>anos em automação industrial</span>
+      </li>
+      <li class="num">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" aria-hidden="true"><path d="M24 44S10 29.6 10 19a14 14 0 0 1 28 0c0 10.6-14 25-14 25z"/><circle cx="24" cy="19" r="6"/></svg>
+        <strong>3</strong>
+        <span>estados com distribuição oficial Markem-Imaje: ES, MG e RJ</span>
+      </li>
+      <li class="num">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" aria-hidden="true"><path d="M4 44h40"/><path d="M8 44V18h12v26M20 44V6h20v38"/><path d="M12 24h4M12 31h4M12 38h4M25 13h3M32 13h3M25 20h3M32 20h3M25 27h3M32 27h3M25 34h3M32 34h3"/></svg>
+        <strong>2</strong>
+        <span>unidades: Belo Horizonte e Rio de Janeiro</span>
+      </li>
+    </ul>
     <!-- LOGOS DE CLIENTES: entram aqui (4 a 8, 400×160). Autorização confirmada, arquivos pendentes. -->
   </div>
 </section>
 
 <!-- AUTORIDADE: PERGUNTAS FREQUENTES -->
-<section class="faq">
-  <div class="wrap">
-    <div>
-      <span class="eyebrow">Perguntas frequentes</span>
-      <h2>Dúvidas sobre as impressoras industriais</h2>
+<section class="faq" aria-labelledby="fq-title">
+  <svg class="fq-wave" viewBox="0 0 720 180" preserveAspectRatio="none" aria-hidden="true">
+    <defs><linearGradient id="fqw" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#6a1280"/><stop offset=".6" stop-color="#a23fc4" stop-opacity=".75"/><stop offset="1" stop-color="#d79bec" stop-opacity="0"/></linearGradient></defs>
+    <path d="M0 10C150 40 260 120 720 180H0Z" fill="url(#fqw)" opacity=".45"/>
+    <path d="M0 95C200 105 380 140 600 180H0Z" fill="url(#fqw)"/>
+  </svg>
+  <div class="fq-in">
+    <div class="fq-head">
+      <span class="fq-eyebrow">Perguntas frequentes</span>
+      <h2 id="fq-title">Dúvidas sobre as impressoras industriais</h2>
+      <p class="fq-sub">Encontre aqui as principais respostas sobre equipamentos, aplicações, segurança e atendimento da Brassell.</p>
     </div>
-    <div>
-      <details>
-        <summary>Vocês atendem a minha região?</summary>
-        <p>Sim. A Brassell é distribuidor oficial Markem-Imaje em Minas Gerais, Rio de Janeiro e Espírito Santo, com unidades em Belo Horizonte e no Rio de Janeiro.</p>
+    <div class="fq-list">
+      <details open>
+        <summary><span class="fq-ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round" aria-hidden="true"><path d="M24 44S10 29.6 10 19a14 14 0 0 1 28 0c0 10.6-14 25-14 25z"/><circle cx="24" cy="19" r="6"/></svg></span><span class="fq-q">Vocês atendem a minha região?</span><svg class="fq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M5 9l7 7 7-7"/></svg></summary>
+        <p class="fq-a">Sim. A Brassell é distribuidor oficial Markem-Imaje em Minas Gerais, Rio de Janeiro e Espírito Santo, com unidades em Belo Horizonte e no Rio de Janeiro.</p>
       </details>
       <details>
-        <summary>A Brassell é distribuidor oficial da Markem-Imaje?</summary>
-        <p>Sim. Somos distribuidor oficial Markem-Imaje desde 2016, com equipamentos originais.</p>
+        <summary><span class="fq-ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l7-4 6 3"/><path d="M45 17l-7-4-8 4-7-2-6 5c-1.3 1.2-.6 3.4 1.2 3.4 1 0 2-.4 2.7-1l3.6-2.8 10 8.6"/><path d="M3 17l3 13 3 1"/><path d="M45 17l-3 13-4 2"/><path d="M9 31l3.5 3.2a2.3 2.3 0 0 0 3.4-3.1L13 28"/><path d="M15.8 31.2l3 2.8a2.3 2.3 0 0 0 3.4-3.1l-2.9-3"/><path d="M22.2 34.1l2 1.8a2.3 2.3 0 0 0 3.4-3.1L25 30.3"/></svg></span><span class="fq-q">A Brassell é distribuidor oficial da Markem-Imaje?</span><svg class="fq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M5 9l7 7 7-7"/></svg></summary>
+        <p class="fq-a">Sim. Somos distribuidor oficial Markem-Imaje desde 2016, com equipamentos originais.</p>
       </details>
       <details>
-        <summary>Qual tecnologia serve para a minha embalagem?</summary>
-        <p>Depende do material e da linha. O jato de tinta contínuo atende uma ampla gama de materiais em alta velocidade; a transferência térmica é ideal para embalagens flexíveis; o print &amp; apply aplica etiquetas em embalagens de todos os tamanhos.</p>
+        <summary><span class="fq-ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round" aria-hidden="true"><path d="M24 6L42 14V34L24 42L6 34V14Z"/><path d="M6 14L24 22L42 14M24 22V42"/><path d="M15 10L33 18V25"/></svg></span><span class="fq-q">Qual tecnologia serve para a minha embalagem?</span><svg class="fq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M5 9l7 7 7-7"/></svg></summary>
+        <p class="fq-a">Depende do material e da linha. O jato de tinta contínuo atende uma ampla gama de materiais em alta velocidade; a transferência térmica é ideal para embalagens flexíveis; o print &amp; apply aplica etiquetas em embalagens de todos os tamanhos.</p>
       </details>
       <details>
-        <summary>O que a impressora consegue imprimir?</summary>
-        <p>Datas, lote e validade, código de barras e QR Code, direto na embalagem ou no produto.</p>
+        <summary><span class="fq-ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round" aria-hidden="true"><path d="M14 18V5h20v13"/><rect x="5" y="18" width="38" height="17" rx="4"/><path d="M14 30h20v13H14z"/><path d="M36 24h2"/></svg></span><span class="fq-q">O que a impressora consegue imprimir?</span><svg class="fq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M5 9l7 7 7-7"/></svg></summary>
+        <p class="fq-a">Datas, lote e validade, código de barras e QR Code, direto na embalagem ou no produto.</p>
       </details>
       <details>
-        <summary>A impressão é segura para embalagens de alimentos?</summary>
-        <p>Sim. Para alimentos, as tintas são 100% seguras e comestíveis, em conformidade com normas locais e nacionais.</p>
+        <summary><span class="fq-ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 4v12a6 6 0 0 0 12 0V4M16 4v40"/><path d="M36 44V4c-5 3-7 9-7 16 0 4 3 6 7 6"/></svg></span><span class="fq-q">A impressão é segura para embalagens de alimentos?</span><svg class="fq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M5 9l7 7 7-7"/></svg></summary>
+        <p class="fq-a">Sim. Para alimentos, as tintas são 100% seguras e comestíveis, em conformidade com normas locais e nacionais.</p>
       </details>
       <details>
-        <summary>O código é permanente?</summary>
-        <p>Depende da aplicação. Em cabos, fios e plásticos extrudados, o código é permanente e legível mesmo em ambientes adversos; em garrafas plásticas, há opção de código permanente ou removível.</p>
+        <summary><span class="fq-ico"><svg viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M5 5h16v16H5zm4 4v8h8V9zM27 5h16v16H27zm4 4v8h8V9zM5 27h16v16H5zm4 4v8h8v-8z"/><path d="M27 27h5v5h-5zM36 27h7v5h-7zM27 36h5v7h-5zM34 34h5v5h-5zM39 39h4v4h-4z"/></svg></span><span class="fq-q">O código é permanente?</span><svg class="fq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M5 9l7 7 7-7"/></svg></summary>
+        <p class="fq-a">Depende da aplicação. Em cabos, fios e plásticos extrudados, o código é permanente e legível mesmo em ambientes adversos; em garrafas plásticas, há opção de código permanente ou removível.</p>
       </details>
       <details>
-        <summary>Qual é o horário de atendimento?</summary>
-        <p>De segunda a sexta, das 8h às 18h.</p>
+        <summary><span class="fq-ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 28v-6a16 16 0 0 1 32 0v6"/><rect x="5" y="26" width="8" height="13" rx="3"/><rect x="35" y="26" width="8" height="13" rx="3"/><path d="M39 39c0 4-4 6-9 6h-3"/></svg></span><span class="fq-q">Qual é o horário de atendimento?</span><svg class="fq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M5 9l7 7 7-7"/></svg></summary>
+        <p class="fq-a">De segunda a sexta, das 8h às 18h.</p>
       </details>
     </div>
   </div>
