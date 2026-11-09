@@ -164,21 +164,75 @@ section{padding-block:clamp(56px,8vw,96px)}
   .tech-btn{height:46px;font-size:15px;padding:0 24px;gap:12px;border-radius:8px}
 }
 
-/* linhas */
+/* vitrine: medidas da arte de referência (1672 px); --w = 1px da arte */
+.vitrine{--w:clamp(.52px, calc(100vw / 1672), 1.15px);--v-ink:#15122a;--v-text:#3c3a48;--v-purple:#8a168d;position:relative;overflow:hidden;padding:calc(var(--w) * 26) 0 calc(var(--w) * 64);background:linear-gradient(180deg,#ffffff 0%,#faf8fc 55%,#f5f1f9 100%)}
+.vt-in{position:relative;max-width:calc(var(--w) * 1672);margin:0 auto}
+.vt-photo{position:absolute;z-index:0;top:calc(var(--w) * -26);right:0;width:calc(var(--w) * 767);height:calc(var(--w) * 262);-webkit-mask-image:linear-gradient(90deg,transparent,#000 22%),linear-gradient(180deg,#000 85%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent,#000 22%),linear-gradient(180deg,#000 85%,transparent);mask-composite:intersect}
+.vt-photo img{width:100%;height:100%;object-fit:cover}
+.vt-head{position:relative;z-index:1;padding:0 calc(var(--w) * 40) 0 calc(var(--w) * 118);max-width:calc(var(--w) * 940)}
+.vt-eyebrow{font-family:"Plus Jakarta Sans",var(--body);font-weight:800;font-size:max(12px, calc(var(--w) * 14.5));letter-spacing:.2em;text-transform:uppercase;color:var(--v-purple)}
+.vitrine h2{font-family:"Plus Jakarta Sans",var(--body);font-weight:800;font-size:max(25px, calc(var(--w) * 36));line-height:1.06;letter-spacing:-.02em;color:var(--v-ink);margin-top:calc(var(--w) * 8)}
+.vt-sub{margin-top:calc(var(--w) * 12);font-family:"Plus Jakarta Sans",var(--body);font-weight:500;font-size:max(15px, calc(var(--w) * 18.5));line-height:1.3;color:var(--v-text);max-width:calc(var(--w) * 640)}
+.vt-feats{list-style:none;margin:calc(var(--w) * 24) 0 0;padding:0;display:flex}
+.vt-feats li{display:flex;align-items:center;gap:calc(var(--w) * 14);padding-inline:calc(var(--w) * 34);font-family:"Plus Jakarta Sans",var(--body);font-size:max(12.5px, calc(var(--w) * 15.5));line-height:1.25;color:var(--v-text);white-space:nowrap}
+.vt-feats li:first-child{padding-left:0}
+.vt-feats li+li{border-left:1.5px solid #ddd6e3}
+.vt-feats strong{display:block;font-weight:700;color:var(--v-ink)}
+.vt-feats svg{width:max(28px, calc(var(--w) * 42));height:max(28px, calc(var(--w) * 42));flex:none;color:var(--v-purple)}
 
-/* vitrine */
-.shelf{margin-top:56px}
-.shelf-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:20px;flex-wrap:wrap}
-.shelf-head h3{font-size:28px}
-.shelf-head span{font-size:15px;color:var(--muted)}
-.products{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px}
-.product{background:var(--paper);border-radius:var(--radius);padding:18px 18px 20px;display:flex;flex-direction:column;text-decoration:none;transition:transform .15s, box-shadow .15s}
-.product:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(22,24,29,.08)}
-.product figure{margin:0 0 14px;aspect-ratio:4/3;background:var(--white);border-radius:6px;display:flex;align-items:center;justify-content:center;padding:10px;overflow:hidden}
-.product img{max-height:100%;width:auto;object-fit:contain}
-.product small{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-.product strong{font-family:var(--display);font-size:24px;color:var(--ink);line-height:1.1;margin-top:2px}
-.product em{font-style:normal;font-size:15px;color:var(--accent);font-weight:600;margin-top:10px}
+.shelf{position:relative;z-index:1;padding-inline:calc(var(--w) * 83) calc(var(--w) * 84);margin-top:calc(var(--w) * 34);scroll-margin-top:20px}
+.vt-head + .shelf{margin-top:calc(var(--w) * 42)}
+.shelf-band{display:flex;align-items:center;min-height:max(44px, calc(var(--w) * 50));border-radius:calc(var(--w) * 26);background:linear-gradient(90deg,#f0e3f5 0%,#ead9f1 55%,#eddff3 100%);overflow:hidden;box-shadow:0 calc(var(--w) * 8) calc(var(--w) * 20) calc(var(--w) * -12) rgba(80,30,100,.35)}
+.shelf-title{flex:none;align-self:stretch;display:flex;align-items:center;gap:calc(var(--w) * 22);padding:0 calc(var(--w) * 64) 0 calc(var(--w) * 30);color:#fff;background:linear-gradient(90deg,#3b0f4f 0%,#5a1470 55%,#6d1a82 100%);clip-path:polygon(0 0,100% 0,calc(100% - var(--w) * 24) 100%,0 100%)}
+.shelf-title svg{width:max(24px, calc(var(--w) * 36));height:max(24px, calc(var(--w) * 36));flex:none}
+.shelf-title i{width:1.5px;height:calc(var(--w) * 28);background:rgba(255,255,255,.55)}
+.shelf-title h3{font-family:"Plus Jakarta Sans",var(--body);font-weight:700;font-size:max(16px, calc(var(--w) * 24));letter-spacing:-.015em;color:#fff;white-space:nowrap}
+.shelf-desc{flex:1;min-width:0;padding:0 calc(var(--w) * 20) 0 calc(var(--w) * 26);font-family:"Plus Jakarta Sans",var(--body);font-weight:500;font-size:max(12.5px, calc(var(--w) * 15.5));line-height:1.25;color:#33303f;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.shelf-count{flex:none;margin-right:calc(var(--w) * 16);border:1.5px solid #4a1258;border-radius:999px;background:#fff;padding:calc(var(--w) * 4) calc(var(--w) * 16);font-family:"Plus Jakarta Sans",var(--body);font-weight:700;font-size:max(12px, calc(var(--w) * 14));color:#2a1438;white-space:nowrap}
+
+.products{display:grid;grid-template-columns:repeat(var(--n),minmax(0,1fr));gap:calc(var(--w) * 24);margin-top:calc(var(--w) * 16)}
+.product{display:flex;flex-direction:column;background:#fff;border-radius:calc(var(--w) * 16);overflow:hidden;text-decoration:none;box-shadow:0 calc(var(--w) * 14) calc(var(--w) * 34) calc(var(--w) * -14) rgba(60,30,80,.24),0 0 0 1px rgba(120,90,150,.07);transition:transform .15s,box-shadow .15s}
+.product:hover{transform:translateY(-3px);box-shadow:0 calc(var(--w) * 20) calc(var(--w) * 40) calc(var(--w) * -14) rgba(60,30,80,.32),0 0 0 1px rgba(120,90,150,.1)}
+.product figure{margin:0;position:relative;height:max(110px, calc(var(--w) * 154));display:flex;align-items:flex-end;justify-content:center;padding-top:calc(var(--w) * 6);overflow:hidden;background:linear-gradient(150deg,transparent 58%,rgba(176,128,206,.2) 58.5%,rgba(220,196,234,.1) 74%,transparent 74.5%),linear-gradient(170deg,#e8e8ed 0%,#f2f2f5 55%,#fafafb 100%)}
+.product img{position:relative;height:96%;width:auto;max-width:88%;object-fit:contain;mix-blend-mode:multiply}
+.product img.zoom{transform:scale(1.4);transform-origin:50% 62%}
+.product-body{display:flex;flex-direction:column;align-items:flex-start;padding:calc(var(--w) * 10) calc(var(--w) * 24) calc(var(--w) * 18)}
+.product small{font-family:"Plus Jakarta Sans",var(--body);font-weight:700;font-size:max(11px, calc(var(--w) * 13));letter-spacing:.02em;text-transform:uppercase;color:#5b5866}
+.product strong{font-family:"Plus Jakarta Sans",var(--body);font-weight:800;font-size:max(17px, calc(var(--w) * 24));line-height:1.12;letter-spacing:-.02em;color:var(--v-ink);margin-top:calc(var(--w) * 2)}
+.product-btn{margin-top:calc(var(--w) * 12);display:inline-flex;align-items:center;gap:calc(var(--w) * 10);height:max(32px, calc(var(--w) * 34));padding:0 max(14px, calc(var(--w) * 21));border-radius:999px;background:linear-gradient(180deg,#8f1c93 0%,#5e1066 100%);font-family:"Plus Jakarta Sans",var(--body);font-weight:600;font-size:max(12.5px, calc(var(--w) * 15));color:#fff;white-space:nowrap}
+.product-btn svg{width:max(14px, calc(var(--w) * 18));height:max(14px, calc(var(--w) * 18))}
+
+@media (max-width:1023px){
+  .vitrine{padding:36px 0 52px}
+  .vt-in{display:flex;flex-direction:column}
+  .vt-head{order:1;padding:0 20px;max-width:720px}
+  .vt-photo{order:2}
+  .shelf{order:3}
+  .vt-sub{max-width:none}
+  .vt-eyebrow{font-size:12px}
+  .vitrine h2{font-size:clamp(25px,5.8vw,36px)}
+  .vt-sub{font-size:16px;margin-top:10px}
+  .vt-feats{flex-direction:column;margin-top:18px}
+  .vt-feats li,.vt-feats li+li{padding:10px 0;border-left:0;font-size:15px;white-space:normal}
+  .vt-feats li+li{border-top:1px solid #e6dfea}
+  .vt-feats svg{width:32px;height:32px}
+  .vt-photo{position:relative;top:auto;width:auto;height:auto;aspect-ratio:767/262;margin-top:20px;-webkit-mask-image:none;mask-image:none}
+  .shelf,.vt-head + .shelf{padding-inline:20px;margin-top:32px}
+  .shelf-band{flex-wrap:wrap;border-radius:18px}
+  .shelf-title{flex:1 1 100%;min-height:50px;padding:0 18px;clip-path:none;gap:14px}
+  .shelf-title h3{font-size:17px;white-space:normal}
+  .shelf-desc{flex:1;padding:10px 12px 10px 18px;font-size:14px;-webkit-line-clamp:4}
+  .shelf-count{font-size:12px;padding:3px 12px;margin-right:12px}
+  .products{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:14px}
+  .product{border-radius:14px}
+  .product figure{height:130px}
+  .product-body{padding:10px 12px 14px}
+  .product strong{font-size:18px}
+  .product-btn{font-size:12.5px;padding:0 12px;gap:6px;height:32px}
+}
+@media (min-width:640px) and (max-width:1023px){
+  .products{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
 
 /* aplicações */
 .apps-sec{background:var(--paper)}
@@ -254,9 +308,6 @@ section{padding-block:clamp(56px,8vw,96px)}
   .nums{grid-template-columns:1fr}
   .num,.num+.num{padding:24px 0;border-left:0}
   .num+.num{border-top:1px solid #3a3f49}
-  .products{grid-template-columns:repeat(2,1fr);gap:12px}
-  .product{padding:12px}
-  .product strong{font-size:20px}
   .footer .wrap{grid-template-columns:1fr}
 }
 </style>
@@ -400,36 +451,71 @@ section{padding-block:clamp(56px,8vw,96px)}
 </section>
 
 <!-- OFERTA: VITRINE -->
-<section class="vitrine" aria-label="Modelos Markem-Imaje">
-  <div class="wrap">
+<section class="vitrine" aria-labelledby="vt-title">
+  <div class="vt-in">
+    <div class="vt-photo" aria-hidden="true"><img src="assets/img/vitrine-linha.jpg" alt="" width="767" height="262" loading="lazy"></div>
+    <div class="vt-head">
+      <span class="vt-eyebrow">Modelos</span>
+      <h2 id="vt-title">Escolha a impressora industrial<br> Markem-Imaje para a sua linha</h2>
+      <p class="vt-sub">Tecnologias Markem-Imaje para linhas de produção mais eficientes, seguras e em conformidade com as exigências do mercado.</p>
+      <ul class="vt-feats">
+        <li><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><circle cx="24" cy="24" r="15"/><circle cx="24" cy="24" r="8"/><circle cx="24" cy="24" r="2.5" fill="currentColor"/><path d="M24 3v8M24 37v8M3 24h8M37 24h8"/></svg><span><strong>Alta precisão</strong>de impressão</span></li>
+        <li><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 42h36"/><path d="M10 42V32M17 42V27M24 42V30M31 42V22M38 42V15"/><path d="M8 24l9-7 7 4 14-12"/><path d="M33 9h5v5"/></svg><span><strong>Confiabilidade</strong>para a produção contínua</span></li>
+        <li><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 4l16 6v11c0 10-6.8 18-16 22-9.2-4-16-12-16-22V10z"/><path d="M16.5 24l5.5 5.5 10-11"/></svg><span><strong>Rastreabilidade</strong>e conformidade regulatória</span></li>
+      </ul>
+    </div>
 
     <div class="shelf" id="cij">
-      <div class="shelf-head"><h3>Impressoras de jato de tinta contínuo (CIJ)</h3><span>5 modelos</span></div>
-      <div class="products">
-        <a class="product" href="#contato"><figure><img src="assets/img/p-9018.jpg" alt="Markem-Imaje 9018" loading="lazy"></figure><small>Markem-Imaje</small><strong>9018</strong><em>Solicitar orçamento</em></a>
-        <a class="product" href="#contato"><figure><img src="assets/img/p-9330.png" alt="Markem-Imaje 9330" loading="lazy"></figure><small>Markem-Imaje</small><strong>9330</strong><em>Solicitar orçamento</em></a>
-        <a class="product" href="#contato"><figure><img src="assets/img/p-9410.png" alt="Markem-Imaje 9410" loading="lazy"></figure><small>Markem-Imaje</small><strong>9410</strong><em>Solicitar orçamento</em></a>
-        <a class="product" href="#contato"><figure><img src="assets/img/p-9450.jpg" alt="Markem-Imaje 9450" loading="lazy"></figure><small>Markem-Imaje</small><strong>9450</strong><em>Solicitar orçamento</em></a>
-        <a class="product" href="#contato"><figure><img src="assets/img/p-9750.png" alt="Markem-Imaje 9750" loading="lazy"></figure><small>Markem-Imaje</small><strong>9750</strong><em>Solicitar orçamento</em></a>
+      <div class="shelf-band">
+        <div class="shelf-title">
+          <svg viewBox="0 0 36 36" fill="#fff" aria-hidden="true"><circle cx="6" cy="8" r="2.4"/><circle cx="14" cy="8" r="2.4"/><circle cx="22" cy="8" r="2.4"/><circle cx="30" cy="8" r="2.4"/><circle cx="6" cy="18" r="2.4"/><circle cx="14" cy="18" r="2.4"/><circle cx="22" cy="18" r="2.4"/><circle cx="30" cy="18" r="2.4"/><circle cx="6" cy="28" r="2.4"/><circle cx="14" cy="28" r="2.4"/><circle cx="22" cy="28" r="2.4"/><circle cx="30" cy="28" r="2.4"/></svg>
+          <i aria-hidden="true"></i>
+          <h3>Impressoras de jato de tinta contínuo (CIJ)</h3>
+        </div>
+        <p class="shelf-desc">Codificação versátil e de alto desempenho para diferentes superfícies e velocidades de linha.</p>
+        <span class="shelf-count">5 modelos</span>
+      </div>
+      <div class="products" style="--n:5">
+        <a class="product" href="#contato"><figure><img src="assets/img/p-9018.jpg" alt="Markem-Imaje 9018" loading="lazy"></figure><div class="product-body"><small>Markem-Imaje</small><strong>9018</strong><span class="product-btn">Solicitar orçamento <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></div></a>
+        <a class="product" href="#contato"><figure><img src="assets/img/p-9330.png" alt="Markem-Imaje 9330" loading="lazy"></figure><div class="product-body"><small>Markem-Imaje</small><strong>9330</strong><span class="product-btn">Solicitar orçamento <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></div></a>
+        <a class="product" href="#contato"><figure><img src="assets/img/p-9410.png" alt="Markem-Imaje 9410" loading="lazy"></figure><div class="product-body"><small>Markem-Imaje</small><strong>9410</strong><span class="product-btn">Solicitar orçamento <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></div></a>
+        <a class="product" href="#contato"><figure><img src="assets/img/p-9450.jpg" alt="Markem-Imaje 9450" loading="lazy"></figure><div class="product-body"><small>Markem-Imaje</small><strong>9450</strong><span class="product-btn">Solicitar orçamento <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></div></a>
+        <a class="product" href="#contato"><figure><img src="assets/img/p-9750.png" alt="Markem-Imaje 9750" loading="lazy"></figure><div class="product-body"><small>Markem-Imaje</small><strong>9750</strong><span class="product-btn">Solicitar orçamento <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></div></a>
       </div>
     </div>
 
     <div class="shelf" id="tto">
-      <div class="shelf-head"><h3>Impressoras de transferência térmica (TTO)</h3><span>4 modelos</span></div>
-      <div class="products">
-        <a class="product" href="#contato"><figure><img src="assets/img/p-oem.png" alt="Markem-Imaje SmartDate OEM Connect" loading="lazy"></figure><small>Markem-Imaje</small><strong>SmartDate OEM Connect</strong><em>Solicitar orçamento</em></a>
-        <a class="product" href="#contato"><figure><img src="assets/img/p-x30.png" alt="Markem-Imaje SmartDate X30" loading="lazy"></figure><small>Markem-Imaje</small><strong>SmartDate X30</strong><em>Solicitar orçamento</em></a>
-        <a class="product" href="#contato"><figure><img src="assets/img/p-x45.png" alt="Markem-Imaje SmartDate X45" loading="lazy"></figure><small>Markem-Imaje</small><strong>SmartDate X45</strong><em>Solicitar orçamento</em></a>
-        <a class="product" href="#contato"><figure><img src="assets/img/p-x65.png" alt="Markem-Imaje SmartDate X65" loading="lazy"></figure><small>Markem-Imaje</small><strong>SmartDate X65</strong><em>Solicitar orçamento</em></a>
+      <div class="shelf-band">
+        <div class="shelf-title">
+          <svg viewBox="0 0 36 36" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l8-4 8 4v13l-8 4-8-4z"/><path d="M3 11l8 4 8-4M11 15v13"/><path d="M19 11l7-4 7 4v13l-7 4-7-4"/><path d="M19 11l7 4 7-4M26 15v13"/></svg>
+          <i aria-hidden="true"></i>
+          <h3>Impressoras de transferência térmica (TTO)</h3>
+        </div>
+        <p class="shelf-desc">Codificação de alta qualidade em embalagens flexíveis, com impressões nítidas e duráveis.</p>
+        <span class="shelf-count">4 modelos</span>
+      </div>
+      <div class="products" style="--n:4">
+        <a class="product" href="#contato"><figure><img class="zoom" src="assets/img/p-oem.png" alt="Markem-Imaje SmartDate OEM Connect" loading="lazy"></figure><div class="product-body"><small>Markem-Imaje</small><strong>SmartDate OEM Connect</strong><span class="product-btn">Solicitar orçamento <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></div></a>
+        <a class="product" href="#contato"><figure><img class="zoom" src="assets/img/p-x30.png" alt="Markem-Imaje SmartDate X30" loading="lazy"></figure><div class="product-body"><small>Markem-Imaje</small><strong>SmartDate X30</strong><span class="product-btn">Solicitar orçamento <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></div></a>
+        <a class="product" href="#contato"><figure><img class="zoom" src="assets/img/p-x45.png" alt="Markem-Imaje SmartDate X45" loading="lazy"></figure><div class="product-body"><small>Markem-Imaje</small><strong>SmartDate X45</strong><span class="product-btn">Solicitar orçamento <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></div></a>
+        <a class="product" href="#contato"><figure><img class="zoom" src="assets/img/p-x65.png" alt="Markem-Imaje SmartDate X65" loading="lazy"></figure><div class="product-body"><small>Markem-Imaje</small><strong>SmartDate X65</strong><span class="product-btn">Solicitar orçamento <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></div></a>
       </div>
     </div>
 
     <div class="shelf" id="pa">
-      <div class="shelf-head"><h3>Sistemas de etiquetagem print &amp; apply</h3><span>3 modelos</span></div>
-      <div class="products">
-        <a class="product" href="#contato"><figure><img src="assets/img/p-2200.png" alt="Markem-Imaje 2200" loading="lazy"></figure><small>Markem-Imaje</small><strong>2200</strong><em>Solicitar orçamento</em></a>
-        <a class="product" href="#contato"><figure><img src="assets/img/p-2200-pallet.png" alt="Markem-Imaje 2200 PALLET" loading="lazy"></figure><small>Markem-Imaje</small><strong>2200 PALLET</strong><em>Solicitar orçamento</em></a>
-        <a class="product" href="#contato"><figure><img src="assets/img/p-cimpak.png" alt="Markem-Imaje CIMPAK" loading="lazy"></figure><small>Markem-Imaje</small><strong>CIMPAK</strong><em>Solicitar orçamento</em></a>
+      <div class="shelf-band">
+        <div class="shelf-title">
+          <svg viewBox="0 0 36 36" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M4 9h20l8 9-8 9H4z"/><path d="M9 14v8M12.5 14v8M16 14v8"/><circle cx="25" cy="18" r="2"/></svg>
+          <i aria-hidden="true"></i>
+          <h3>Sistemas de etiquetagem print &amp; apply</h3>
+        </div>
+        <p class="shelf-desc">Aplicação automática e precisa de etiquetas em embalagens de todos os tamanhos.</p>
+        <span class="shelf-count">3 modelos</span>
+      </div>
+      <div class="products" style="--n:4">
+        <a class="product" href="#contato"><figure><img src="assets/img/p-2200.png" alt="Markem-Imaje 2200" loading="lazy"></figure><div class="product-body"><small>Markem-Imaje</small><strong>2200</strong><span class="product-btn">Solicitar orçamento <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></div></a>
+        <a class="product" href="#contato"><figure><img src="assets/img/p-2200-pallet.png" alt="Markem-Imaje 2200 PALLET" loading="lazy"></figure><div class="product-body"><small>Markem-Imaje</small><strong>2200 PALLET</strong><span class="product-btn">Solicitar orçamento <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></div></a>
+        <a class="product" href="#contato"><figure><img src="assets/img/p-cimpak.png" alt="Markem-Imaje CIMPAK" loading="lazy"></figure><div class="product-body"><small>Markem-Imaje</small><strong>CIMPAK</strong><span class="product-btn">Solicitar orçamento <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></div></a>
       </div>
     </div>
   </div>
