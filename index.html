@@ -401,32 +401,74 @@ section{padding-block:clamp(56px,8vw,96px)}
   .fq-wave{width:70%;height:90px}
 }
 
-/* contato */
-.contact{background:var(--accent);color:#fff}
-.contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
-.contact h2{color:#fff}
-.contact .lead{color:#f3dff1}
-.contact-meta{margin-top:28px;display:grid;gap:6px;font-size:16px;color:#f3dff1}
-.form-slot{background:var(--white);color:var(--text);border-radius:var(--radius);padding:32px;min-height:340px}
-.form-slot.placeholder{display:flex;align-items:center;justify-content:center;text-align:center;border:2px dashed #c9a3c5;background:#fbf6fa;color:var(--muted);font-size:15px}
+/* contato + rodapé: medidas da arte de referência (1774 px); --c = 1px da arte */
+.contact,.footer{--c:clamp(.52px, calc(100vw / 1774), 1.1px)}
+.contact{position:relative;overflow:hidden;padding:calc(var(--c) * 48) 0 calc(var(--c) * 42);color:#fff;background:radial-gradient(90% 120% at 100% 0%,#b545d4 0%,rgba(181,69,212,0) 55%),linear-gradient(100deg,#3b0a52 0%,#55107a 45%,#6e1590 75%,#8a24a8 100%)}
+.ct-wave{position:absolute;left:0;right:0;bottom:0;height:calc(var(--c) * 110);pointer-events:none}
+.ct-in{position:relative;z-index:1;max-width:calc(var(--c) * 1774);margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) calc(var(--c) * 764);gap:calc(var(--c) * 60);align-items:start;padding-inline:calc(var(--c) * 116) calc(var(--c) * 89)}
+.ct-copy{padding-top:calc(var(--c) * 4)}
+.ct-eyebrow{display:flex;align-items:center;gap:calc(var(--c) * 18);font-family:var(--display);font-weight:600;font-size:max(13px, calc(var(--c) * 22));letter-spacing:.18em;text-transform:uppercase;color:#fff}
+.ct-eyebrow::before{content:"";width:max(3px, calc(var(--c) * 4));height:max(18px, calc(var(--c) * 32));background:#d36cf0}
+.contact h2{margin-top:calc(var(--c) * 24);padding-left:calc(var(--c) * 22);font-family:"Plus Jakarta Sans",var(--body);font-weight:800;font-size:max(28px, calc(var(--c) * 50));line-height:1.1;letter-spacing:-.02em;color:#fff}
+.contact h2 span{color:#e66ff8}
+.ct-sub{margin-top:calc(var(--c) * 26);padding-left:calc(var(--c) * 22);font-family:"Plus Jakarta Sans",var(--body);font-weight:500;font-size:max(15px, calc(var(--c) * 23));line-height:1.35;color:#fff;max-width:calc(var(--c) * 680)}
+.ct-info{list-style:none;margin:calc(var(--c) * 40) 0 0;padding:0 0 0 calc(var(--c) * 36);display:flex;gap:calc(var(--c) * 70)}
+.ct-info li{display:flex;align-items:center;gap:calc(var(--c) * 22);font-family:"Plus Jakarta Sans",var(--body);font-weight:600;font-size:max(14px, calc(var(--c) * 20));line-height:1.35;color:#fff}
+.ct-info svg{width:max(28px, calc(var(--c) * 54));height:max(28px, calc(var(--c) * 54));flex:none;color:#d77cf3;padding-right:calc(var(--c) * 22);border-right:1.5px solid rgba(255,255,255,.45);box-sizing:content-box}
+.ct-card{background:#fbf9fd;border-radius:calc(var(--c) * 30);padding:calc(var(--c) * 28) calc(var(--c) * 38) calc(var(--c) * 36) calc(var(--c) * 42);box-shadow:0 calc(var(--c) * 30) calc(var(--c) * 60) calc(var(--c) * -20) rgba(30,0,50,.55);color:#2c2a38}
+.ct-card-head{display:flex;align-items:center;gap:calc(var(--c) * 20)}
+.ct-card-ico{flex:none;width:calc(var(--c) * 110);height:calc(var(--c) * 76);min-width:64px;min-height:44px;display:flex;align-items:center;justify-content:center;color:#fff;background:linear-gradient(140deg,#a52a9f 0%,#86178a 50%,#5f0f66 100%);clip-path:polygon(10% 0,100% 0,90% 100%,0 100%);border-radius:calc(var(--c) * 14)}
+.ct-card-ico svg{width:max(26px, calc(var(--c) * 48));height:max(26px, calc(var(--c) * 48))}
+.ct-card h3{font-family:var(--display);font-weight:700;font-size:max(22px, calc(var(--c) * 38));line-height:1.05;color:#15122a}
+.ct-card-head p{margin-top:calc(var(--c) * 4);font-family:"Plus Jakarta Sans",var(--body);font-weight:500;font-size:max(14px, calc(var(--c) * 20));color:#3a3747}
+/* espaço do formulário: fica vazio até entrar o shortcode do plugin */
+.form-slot{margin-top:calc(var(--c) * 26);min-height:max(260px, calc(var(--c) * 340))}
 
-/* rodapé */
-.footer{background:var(--ink);color:#aeb3bc;padding-block:48px 28px;font-size:15px}
-.footer .wrap{display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px}
-.footer .logo-box{background:#fff;border-radius:6px;padding:10px 14px;display:inline-block}
-.footer .logo-box img{height:40px;width:auto}
-.footer h4{font-family:var(--display);font-size:17px;letter-spacing:.08em;text-transform:uppercase;color:#fff;margin:0 0 10px}
-.footer address{font-style:normal}
-.footer .legal{grid-column:1/-1;border-top:1px solid #31353e;padding-top:20px;margin-top:8px;font-size:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.footer{position:relative;overflow:hidden;background:#1c1a22;color:#e6e3ec;padding:calc(var(--c) * 42) 0 calc(var(--c) * 40)}
+.ft-wave{position:absolute;right:0;bottom:0;width:calc(var(--c) * 700);height:calc(var(--c) * 110);pointer-events:none}
+.ft-in{position:relative;z-index:1;max-width:calc(var(--c) * 1774);margin:0 auto;padding-inline:calc(var(--c) * 139) calc(var(--c) * 130)}
+.ft-cols{display:grid;grid-template-columns:calc(var(--c) * 532) minmax(0,1fr) minmax(0,1fr);align-items:start}
+.ft-col+.ft-col{border-left:1.5px solid rgba(255,255,255,.22);padding-left:calc(var(--c) * 62);min-height:calc(var(--c) * 96)}
+.ft-brand{padding-right:calc(var(--c) * 40)}
+.ft-logos{display:flex;align-items:center;gap:calc(var(--c) * 32);padding-top:calc(var(--c) * 4)}
+.ft-logos img:first-child{height:max(34px, calc(var(--c) * 62));width:auto;filter:brightness(0) invert(1)}
+.ft-logos i{width:1.5px;height:calc(var(--c) * 52);background:rgba(255,255,255,.45)}
+.ft-logos img:last-child{height:max(26px, calc(var(--c) * 50));width:auto;filter:invert(1) grayscale(1) brightness(1.85)}
+.ft-brand p{margin-top:calc(var(--c) * 26);font-family:"Plus Jakarta Sans",var(--body);font-weight:500;font-size:max(14px, calc(var(--c) * 19));color:#f0edf5}
+.ft-addr{display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:calc(var(--c) * 24);align-items:start}
+.ft-pin{grid-row:span 2;width:max(34px, calc(var(--c) * 44));height:max(34px, calc(var(--c) * 44));border-radius:calc(var(--c) * 8);background:#8a1d93;display:flex;align-items:center;justify-content:center;color:#fff}
+.ft-pin svg{width:62%;height:62%}
+.footer h4{font-family:var(--display);font-weight:700;font-size:max(17px, calc(var(--c) * 27));letter-spacing:.02em;text-transform:uppercase;color:#fff;margin:calc(var(--c) * 6) 0 0}
+.footer address{margin-top:calc(var(--c) * 14);font-style:normal;font-family:"Plus Jakarta Sans",var(--body);font-weight:500;font-size:max(13.5px, calc(var(--c) * 18.5));line-height:1.45;color:#e2dfe8}
+.footer .legal{margin-top:calc(var(--c) * 38);padding-top:calc(var(--c) * 26);border-top:1px solid rgba(255,255,255,.2);font-family:"Plus Jakarta Sans",var(--body);font-size:max(12.5px, calc(var(--c) * 16));color:#e2dfe8}
 
-/* responsivo */
-@media (max-width:980px){
-  .contact .wrap{grid-template-columns:1fr}
-  .footer .wrap{grid-template-columns:1fr 1fr}
+@media (max-width:1023px){
+  .contact{padding:48px 0 70px}
+  .ct-in{grid-template-columns:1fr;gap:32px;padding-inline:20px}
+  .contact h2,.ct-sub{padding-left:0}
+  .contact h2{font-size:clamp(28px,6.6vw,42px)}
+  .ct-sub{font-size:17px}
+  .ct-info{flex-direction:column;gap:16px;padding-left:0}
+  .ct-info svg{width:34px;height:34px;padding-right:14px}
+  .ct-info li{gap:14px;font-size:16px}
+  .ct-card{max-width:680px;border-radius:22px;padding:22px 20px 24px}
+  .ct-card-ico{width:70px;height:50px}
+  .ct-card h3{font-size:24px}
+  .ct-card-head p{font-size:15px}
+  .form-slot{min-height:300px}
+  .footer{padding:40px 0 48px}
+  .ft-in{padding-inline:20px}
+  .ft-cols{grid-template-columns:1fr;gap:26px}
+  .ft-col+.ft-col{border-left:0;padding-left:0;min-height:0;padding-top:24px;border-top:1px solid rgba(255,255,255,.18)}
+  .ft-brand{padding-right:0}
+  .ft-brand p{font-size:15px}
+  .footer h4{font-size:18px}
+  .footer address{font-size:15px}
+  .footer .legal{font-size:13px;margin-top:30px}
+  .ft-wave{width:70%;height:70px}
 }
 @media (max-width:640px){
   body{font-size:16px}
-  .footer .wrap{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -829,37 +871,66 @@ section{padding-block:clamp(56px,8vw,96px)}
 </section>
 
 <!-- CONTATO -->
-<section class="contact" id="contato">
-  <div class="wrap">
-    <div>
-      <span class="eyebrow" style="color:#f3dff1">Solicitar orçamento</span>
-      <h2>Fale com a Brassell e escolha a impressora industrial certa para a sua linha</h2>
-      <p class="lead">Conte qual produto você precisa codificar e indicamos o equipamento Markem-Imaje ideal.</p>
-      <div class="contact-meta">
-        <span>Atendimento em ES, MG e RJ</span>
-        <span>Segunda a sexta, das 8h às 18h</span>
-      </div>
+<section class="contact" id="contato" aria-labelledby="ct-title">
+  <svg class="ct-wave" viewBox="0 0 1774 110" preserveAspectRatio="none" aria-hidden="true">
+    <defs><linearGradient id="ctw" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#c25be0" stop-opacity=".85"/><stop offset=".4" stop-color="#9b2bbd" stop-opacity=".55"/><stop offset="1" stop-color="#d77cf3" stop-opacity=".2"/></linearGradient></defs>
+    <path d="M0 18C260 -6 520 40 700 110H0Z" fill="url(#ctw)" opacity=".75"/>
+    <path d="M0 60C300 40 520 70 640 110H0Z" fill="#7a1595" opacity=".6"/>
+    <path d="M1774 0C1680 30 1560 60 1300 110H1774Z" fill="#c25be0" opacity=".35"/>
+  </svg>
+  <div class="ct-in">
+    <div class="ct-copy">
+      <span class="ct-eyebrow">Solicitar orçamento</span>
+      <h2 id="ct-title">Fale com a Brassell e escolha a <span>impressora industrial certa</span> para a sua linha</h2>
+      <p class="ct-sub">Conte qual produto você precisa codificar e indicamos o equipamento Markem-Imaje ideal.</p>
+      <ul class="ct-info">
+        <li><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round" aria-hidden="true"><path d="M24 44S10 29.6 10 19a14 14 0 0 1 28 0c0 10.6-14 25-14 25z"/><circle cx="24" cy="19" r="6"/></svg><span>Atendimento em<br> ES, MG e RJ</span></li>
+        <li><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="9" width="38" height="34" rx="5"/><path d="M5 19h38M15 4v9M33 4v9"/><path d="M13 27h3M22.5 27h3M32 27h3M13 35h3M22.5 35h3"/></svg><span>Segunda a sexta,<br> das 8h às 18h</span></li>
+      </ul>
     </div>
-    <!-- FORMULÁRIO: substituir pelo shortcode do plugin -->
-    <div class="form-slot placeholder" id="form-plugin">Formulário — entra aqui via shortcode do plugin</div>
+
+    <div class="ct-card">
+      <div class="ct-card-head">
+        <span class="ct-card-ico" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linejoin="round"><path d="M24 7c10.5 0 19 6.9 19 15.5S34.5 38 24 38c-2.3 0-4.5-.3-6.5-.9L8 41l2.8-7.6C7.2 30.6 5 26.7 5 22.5 5 13.9 13.5 7 24 7z"/><circle cx="16" cy="22.5" r="1.8" fill="currentColor"/><circle cx="24" cy="22.5" r="1.8" fill="currentColor"/><circle cx="32" cy="22.5" r="1.8" fill="currentColor"/></svg></span>
+        <div>
+          <h3>Solicite seu orçamento</h3>
+          <p>Preencha o formulário e fale com um especialista.</p>
+        </div>
+      </div>
+      <!-- FORMULÁRIO: colar aqui o shortcode do plugin -->
+      <div class="form-slot" id="form-plugin"></div>
+    </div>
   </div>
 </section>
 
 </main>
 
 <footer class="footer">
-  <div class="wrap">
-    <div>
-      <span class="logo-box"><img src="assets/img/logo-brassell.png" alt="Brassell" width="116" height="40"></span>
-      <p style="margin-top:14px">Distribuidor oficial Markem-Imaje em ES, MG e RJ.</p>
-    </div>
-    <div>
-      <h4>Belo Horizonte</h4>
-      <address>Rua Érico Verissimo, 2155<br>Santa Mônica, Belo Horizonte - MG<br>31525-365</address>
-    </div>
-    <div>
-      <h4>Rio de Janeiro</h4>
-      <address>Rua José de Figueiredo, 320, Loja 103, Bloco 4<br>Barra da Tijuca, Rio de Janeiro - RJ<br>22793-170</address>
+  <svg class="ft-wave" viewBox="0 0 700 110" preserveAspectRatio="none" aria-hidden="true">
+    <defs><linearGradient id="ftw" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8a1d93" stop-opacity="0"/><stop offset=".6" stop-color="#8a1d93" stop-opacity=".7"/><stop offset="1" stop-color="#b13fc9"/></linearGradient></defs>
+    <path d="M0 110C250 95 480 60 700 0V110Z" fill="url(#ftw)"/>
+    <path d="M200 110C400 100 560 80 700 45V110Z" fill="#6a1278" opacity=".7"/>
+  </svg>
+  <div class="ft-in">
+    <div class="ft-cols">
+      <div class="ft-col ft-brand">
+        <div class="ft-logos">
+          <img src="assets/img/logo-brassell.png" alt="Brassell" width="180" height="62" loading="lazy">
+          <i aria-hidden="true"></i>
+          <img src="assets/img/logo-markem-h.webp" alt="Markem-Imaje" width="222" height="50" loading="lazy">
+        </div>
+        <p>Distribuidor oficial Markem-Imaje em ES, MG e RJ.</p>
+      </div>
+      <div class="ft-col ft-addr">
+        <span class="ft-pin" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><path d="M12 21.5s-7-6.4-7-12A7 7 0 0 1 19 9.5c0 5.6-7 12-7 12z"/><circle cx="12" cy="9.5" r="2.6"/></svg></span>
+        <h4>Belo Horizonte</h4>
+        <address>Rua Érico Verissimo, 2155<br>Santa Mônica, Belo Horizonte - MG<br>31525-365</address>
+      </div>
+      <div class="ft-col ft-addr">
+        <span class="ft-pin" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><path d="M12 21.5s-7-6.4-7-12A7 7 0 0 1 19 9.5c0 5.6-7 12-7 12z"/><circle cx="12" cy="9.5" r="2.6"/></svg></span>
+        <h4>Rio de Janeiro</h4>
+        <address>Rua José de Figueiredo, 320, Loja 103, Bloco 4<br>Barra da Tijuca, Rio de Janeiro - RJ<br>22793-170</address>
+      </div>
     </div>
     <div class="legal">
       <span>Copyright © 2026 Brassell</span>
