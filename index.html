@@ -111,67 +111,57 @@ section{padding-block:clamp(56px,8vw,96px)}
 }
 
 /* selos */
-/* selos + linhas de produto: medidas da arte de referência (2038 px); --v = 1px da arte */
-.equip{--v:clamp(.5px, calc(100vw / 2038), 1.1px);--e-ink:#1b1830;--e-purple:#8a168d;position:relative;overflow:hidden;padding:0 0 calc(var(--v) * 40);background:linear-gradient(180deg,#f7f3fb 0%,#f2edf8 60%,#f6f2fb 100%)}
-.equip-photo{position:absolute;top:0;right:0;width:calc(var(--v) * 950);height:calc(var(--v) * 456);-webkit-mask-image:linear-gradient(180deg,#000 88%,transparent),linear-gradient(90deg,transparent,#000 7%);-webkit-mask-composite:source-in;mask-image:linear-gradient(180deg,#000 88%,transparent),linear-gradient(90deg,transparent,#000 7%);mask-composite:intersect}
-.equip-photo img{width:100%;height:100%;object-fit:cover;object-position:right top}
-.seals{position:relative;z-index:2;color:#fff;height:max(40px, calc(var(--v) * 72))}
-.seals-fill{position:absolute;top:0;bottom:0;left:0;right:calc(var(--v) * 461 - 1px);background:linear-gradient(90deg,#7a128c 0%,#4a0f5b 22%,#33103f 45%,#2e1342 100%)}
-.seals-cap{position:absolute;top:0;right:calc(var(--v) * 373);width:calc(var(--v) * 88);height:100%}
-.seals ul{position:relative;list-style:none;margin:0;padding:0 0 0 calc(var(--v) * 205);height:100%;display:flex;align-items:center}
-.seals li{display:flex;align-items:center;gap:calc(var(--v) * 18);padding-inline:calc(var(--v) * 85);font-family:"Barlow Semi Condensed",var(--display);font-weight:600;font-size:max(13px, calc(var(--v) * 21.5));white-space:nowrap}
+/* selos + linhas de produto: medidas da arte de referência (1672 px); --w = 1px da arte */
+.equip{--w:clamp(.52px, calc(100vw / 1672), 1.15px);--e-ink:#15122a;--e-text:#3c3a48;--e-purple:#9a1a8f;position:relative;overflow:hidden;padding:0 0 calc(var(--w) * 44);background:linear-gradient(180deg,#f3f2f8 0%,#f7f6fb 45%,#f4f2f9 100%)}
+.eq-in{position:relative;max-width:calc(var(--w) * 1672);margin:0 auto}
+.equip-deco{position:absolute;top:calc(var(--w) * 75);right:0;width:calc(var(--w) * 560);height:calc(var(--w) * 400);pointer-events:none}
+
+.seals{position:relative;z-index:2;color:#fff;background:linear-gradient(90deg,#26223a 0%,#1a1630 45%,#141222 100%);box-shadow:0 6px 18px -10px rgba(20,10,40,.6)}
+.seals ul{list-style:none;margin:0;padding:0 0 0 calc(var(--w) * 183);height:max(48px, calc(var(--w) * 75));display:flex;align-items:center}
+.seals li{display:flex;align-items:center;gap:calc(var(--w) * 24);padding-inline:calc(var(--w) * 72);font-family:"Plus Jakarta Sans",var(--body);font-weight:600;font-size:max(13px, calc(var(--w) * 20.5));letter-spacing:-.005em;white-space:nowrap}
 .seals li:first-child{padding-left:0}
-.seals li+li{border-left:1.5px solid rgba(255,255,255,.35);height:calc(var(--v) * 44)}
-.seals svg{width:max(20px, calc(var(--v) * 34));height:max(20px, calc(var(--v) * 34));flex:none;color:#fff}
+.seals li+li{border-left:1.5px solid rgba(255,255,255,.28);height:calc(var(--w) * 32);box-sizing:content-box}
+.seals svg{width:max(20px, calc(var(--w) * 33));height:max(20px, calc(var(--w) * 33));flex:none;color:#dcb8ea}
 
-.equip-head{position:relative;z-index:1;padding:calc(var(--v) * 52) 0 0 calc(var(--v) * 185);max-width:calc(var(--v) * 1100)}
-.equip h2 br.d{display:inline}
-.equip-eyebrow{display:flex;align-items:center;gap:calc(var(--v) * 20);font-family:var(--display);font-weight:700;font-size:max(13px, calc(var(--v) * 21));letter-spacing:.2em;text-transform:uppercase;color:var(--e-purple)}
-.equip-eyebrow::after{content:"";width:calc(var(--v) * 100);height:2px;background:var(--e-purple)}
-.equip h2{font-family:"Plus Jakarta Sans",var(--body);font-weight:700;font-size:max(27px, calc(var(--v) * 50));line-height:1.12;letter-spacing:-.025em;color:var(--e-ink);margin-top:calc(var(--v) * 22)}
-.equip h2 em{font-style:normal;color:var(--e-purple)}
-.equip-lead{margin-top:calc(var(--v) * 26);padding-left:calc(var(--v) * 28);border-left:max(3px, calc(var(--v) * 6)) solid var(--e-purple);font-family:"Plus Jakarta Sans",var(--body);font-weight:500;font-size:max(15px, calc(var(--v) * 20));line-height:1.55;color:#3a3646;max-width:calc(var(--v) * 880)}
+.equip-head{position:relative;z-index:1;padding:calc(var(--w) * 48) calc(var(--w) * 40) 0 calc(var(--w) * 163);max-width:calc(var(--w) * 1180)}
+.equip-eyebrow{display:flex;align-items:center;gap:calc(var(--w) * 22);font-family:"Plus Jakarta Sans",var(--body);font-weight:700;font-size:max(13px, calc(var(--w) * 19.5));letter-spacing:.05em;text-transform:uppercase;color:var(--e-purple)}
+.equip-eyebrow::before{content:"";width:max(3px, calc(var(--w) * 4));height:calc(var(--w) * 22);min-height:14px;background:var(--e-purple);border-radius:2px}
+.equip h2{font-family:"Plus Jakarta Sans",var(--body);font-weight:800;font-size:max(27px, calc(var(--w) * 49));line-height:1.1;letter-spacing:-.02em;color:var(--e-ink);margin-top:calc(var(--w) * 30)}
+.equip-lead{margin-top:calc(var(--w) * 18);font-family:"Plus Jakarta Sans",var(--body);font-weight:400;font-size:max(15px, calc(var(--w) * 21.5));line-height:1.5;color:var(--e-text);max-width:calc(var(--w) * 920)}
 
-.equip-cards{position:relative;z-index:2;display:grid;grid-template-columns:570fr 574fr 596fr;gap:calc(var(--v) * 22);padding-inline:calc(var(--v) * 130) calc(var(--v) * 124);margin-top:calc(var(--v) * 60)}
-.tech-card{display:grid;grid-template-columns:calc(var(--v) * 216) minmax(0,1fr);gap:calc(var(--v) * 32);padding:calc(var(--v) * 16) calc(var(--v) * 24) calc(var(--v) * 16) calc(var(--v) * 16);background:#fdfcfe;border-radius:calc(var(--v) * 28);box-shadow:0 calc(var(--v) * 22) calc(var(--v) * 50) calc(var(--v) * -18) rgba(90,40,110,.24),0 0 0 1px rgba(140,90,160,.06)}
-.tech-card img{width:100%;aspect-ratio:216/241;object-fit:cover;border-radius:calc(var(--v) * 22);align-self:start}
-.tech-body{padding-top:calc(var(--v) * 12);display:flex;flex-direction:column;align-items:flex-start}
-.tech-tag{font-family:var(--display);font-weight:700;font-size:max(13px, calc(var(--v) * 20));letter-spacing:.06em;text-transform:uppercase;color:var(--e-purple)}
-.tech-card h3{font-family:var(--display);font-weight:700;font-size:max(20px, calc(var(--v) * 31));line-height:1.1;color:var(--e-ink);margin-top:calc(var(--v) * 6)}
-.tech-card p{font-family:"Plus Jakarta Sans",var(--body);font-weight:500;font-size:max(14px, calc(var(--v) * 18.5));line-height:1.45;color:#3a3646;margin-top:calc(var(--v) * 12)}
-.tech-btn{margin-top:auto;display:inline-flex;align-items:center;gap:calc(var(--v) * 14);height:max(38px, calc(var(--v) * 46));padding:0 max(16px, calc(var(--v) * 24));border:2px solid var(--e-purple);border-radius:999px;font-family:var(--display);font-weight:700;font-size:max(15px, calc(var(--v) * 20.5));letter-spacing:.02em;text-transform:uppercase;color:var(--e-purple);text-decoration:none;transition:background .15s,color .15s}
-.tech-btn svg{width:max(16px, calc(var(--v) * 24));height:max(16px, calc(var(--v) * 24))}
-.tech-btn:hover{background:var(--e-purple);color:#fff}
-.tech-card p + .tech-btn{margin-top:max(14px, calc(var(--v) * 26))}
+.equip-cards{position:relative;z-index:2;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:calc(var(--w) * 24);padding-inline:calc(var(--w) * 103) calc(var(--w) * 102);margin-top:calc(var(--w) * 44)}
+.tech-card{display:flex;flex-direction:column;background:#fefeff;border-radius:calc(var(--w) * 18);overflow:hidden;box-shadow:0 calc(var(--w) * 18) calc(var(--w) * 44) calc(var(--w) * -16) rgba(60,30,80,.22),0 0 0 1px rgba(120,90,150,.08)}
+.tech-photo{position:relative;aspect-ratio:465/157;overflow:hidden}
+.tech-photo img{width:100%;height:100%;object-fit:cover}
+.tech-photo::before,.tech-photo::after{content:"";position:absolute;left:0;right:0;bottom:0;border-radius:calc(var(--w) * 30) calc(var(--w) * 30) 0 0}
+.tech-photo::before{height:calc(max(12px, var(--w) * 20) + 2px);background:linear-gradient(90deg,#e4583e 0%,#b5229b 16%,#8e168e 100%)}
+.tech-photo::after{height:max(12px, calc(var(--w) * 20));background:#fefeff}
+.tech-body{flex:1;display:flex;flex-direction:column;align-items:flex-start;padding:calc(var(--w) * 4) calc(var(--w) * 40) calc(var(--w) * 30)}
+.tech-tag{display:inline-block;font-family:"Plus Jakarta Sans",var(--body);font-weight:700;font-size:max(12px, calc(var(--w) * 17));letter-spacing:.02em;text-transform:uppercase;color:var(--e-purple);background:#f3e0f1;border-radius:999px;padding:calc(var(--w) * 5) calc(var(--w) * 20)}
+.tech-card h3{font-family:"Plus Jakarta Sans",var(--body);font-weight:800;font-size:max(20px, calc(var(--w) * 29));line-height:1.15;letter-spacing:-.015em;color:var(--e-ink);margin-top:calc(var(--w) * 14)}
+.tech-card p{font-family:"Plus Jakarta Sans",var(--body);font-weight:400;font-size:max(14px, calc(var(--w) * 19.5));line-height:1.38;color:var(--e-text);margin-top:calc(var(--w) * 12);margin-bottom:max(22px, calc(var(--w) * 44))}
+.tech-btn{margin-top:auto;display:inline-flex;align-items:center;gap:calc(var(--w) * 14);height:max(42px, calc(var(--w) * 52));padding:0 max(18px, calc(var(--w) * 38));border-radius:calc(var(--w) * 9);background:linear-gradient(180deg,#a11896 0%,#6d0f6c 100%);box-shadow:0 calc(var(--w) * 10) calc(var(--w) * 22) calc(var(--w) * -8) rgba(110,15,110,.55);font-family:"Plus Jakarta Sans",var(--body);font-weight:700;font-size:max(13px, calc(var(--w) * 18));letter-spacing:.02em;text-transform:uppercase;color:#fff;text-decoration:none;transition:filter .15s,transform .15s}
+.tech-btn svg{width:max(16px, calc(var(--w) * 22));height:max(16px, calc(var(--w) * 22))}
+.tech-btn:hover{filter:brightness(1.1);transform:translateY(-1px)}
 .vitrine{padding-top:clamp(8px,2vw,32px)}
 
 @media (max-width:1023px){
-  .equip{display:flex;flex-direction:column;padding-bottom:48px}
-  .seals{order:0;height:auto}
-  .seals-fill{right:0}
-  .seals-cap{display:none}
-  .seals ul{flex-direction:column;align-items:flex-start;padding:18px 20px;gap:12px}
-  .seals li,.seals li+li{padding:0;border:0;height:auto;font-size:17px;gap:12px;white-space:normal}
+  .equip{padding-bottom:48px}
+  .equip-deco{width:300px;height:220px;opacity:.7}
+  .seals ul{flex-direction:column;align-items:flex-start;height:auto;padding:18px 20px;gap:12px}
+  .seals li,.seals li+li{padding:0;border:0;height:auto;font-size:16px;gap:12px;white-space:normal}
   .seals svg{width:24px;height:24px}
-  .equip-head{order:1;padding:40px 20px 0;max-width:none}
-  .equip-eyebrow::after{width:60px}
-  .equip h2{font-size:clamp(27px,6.4vw,40px);margin-top:14px}
-  .equip-lead{font-size:16px;margin-top:18px;padding-left:16px;max-width:680px}
-  .equip h2 br.d{display:none}
-  .equip-photo{order:2;position:relative;right:auto;width:auto;height:auto;min-height:0;overflow:hidden;aspect-ratio:950/380;margin-top:28px;-webkit-mask-image:none;mask-image:none}
-  .equip-photo img{position:absolute;inset:0}
-  .equip-photo img{object-position:right bottom}
-  .equip-cards{order:3;grid-template-columns:1fr;gap:16px;padding-inline:20px;margin-top:24px;max-width:720px}
-  .tech-card{grid-template-columns:132px minmax(0,1fr);gap:18px;padding:12px 16px 14px 12px;border-radius:20px;box-shadow:0 14px 34px -16px rgba(90,40,110,.3),0 0 0 1px rgba(140,90,160,.06)}
-  .tech-card img{border-radius:14px}
-  .tech-body{padding-top:4px}
-  .tech-card h3{font-size:22px}
-  .tech-card p{font-size:15px;margin-top:6px}
-  .tech-card p + .tech-btn{margin-top:14px}
-  .tech-btn{height:38px;font-size:15px;padding:0 16px;gap:10px}
-}
-@media (max-width:420px){
-  .tech-card{grid-template-columns:104px minmax(0,1fr);gap:14px}
+  .equip-head{padding:40px 20px 0;max-width:720px}
+  .equip-eyebrow{font-size:14px;gap:14px}
+  .equip-eyebrow::before{height:18px}
+  .equip h2{font-size:clamp(27px,6.2vw,40px);margin-top:16px}
+  .equip-lead{font-size:16px;margin-top:14px}
+  .equip-cards{grid-template-columns:1fr;gap:18px;padding-inline:20px;margin-top:28px;max-width:600px}
+  .tech-body{padding:2px 22px 24px}
+  .tech-tag{font-size:13px;padding:5px 14px}
+  .tech-card h3{font-size:23px;margin-top:12px}
+  .tech-card p{font-size:15.5px;margin-top:8px;margin-bottom:20px}
+  .tech-btn{height:46px;font-size:15px;padding:0 24px;gap:12px;border-radius:8px}
 }
 
 /* linhas */
@@ -350,52 +340,62 @@ section{padding-block:clamp(56px,8vw,96px)}
 
 <!-- SELOS DE CONFIANÇA + OFERTA: LINHAS DE PRODUTO -->
 <section class="equip" id="equipamentos">
-  <div class="equip-photo" aria-hidden="true"><img src="assets/img/equip-linha.jpg" alt="" width="950" height="456" loading="lazy"></div>
-
   <div class="seals">
-    <div class="seals-fill"></div>
-    <svg class="seals-cap" viewBox="0 0 88 72" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0H88L48 54Q34 72 8 72H0Z" fill="#2e1342"/></svg>
-    <ul>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 21.5s-7-6.4-7-12A7 7 0 0 1 19 9.5c0 5.6-7 12-7 12z"/><circle cx="12" cy="9.5" r="2.6"/></svg>Atendimento em ES, MG e RJ</li>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 2.5l8 3.2v5.5c0 5-3.4 9-8 10.8-4.6-1.8-8-5.8-8-10.8V5.7z"/><path d="M8.3 12.2l2.7 2.7 5-5.4"/></svg>Equipamentos originais Markem-Imaje</li>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M2.5 21.5h19M4.5 21.5V9L12 3.5 19.5 9v12.5"/><path d="M9 21.5v-7h6v7"/></svg>Unidades em BH e Rio</li>
-    </ul>
+    <div class="eq-in">
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 21.5s-7-6.4-7-12A7 7 0 0 1 19 9.5c0 5.6-7 12-7 12z"/><circle cx="12" cy="9.5" r="2.6"/></svg>Atendimento em ES, MG e RJ</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 2.5l8 3.2v5.5c0 5-3.4 9-8 10.8-4.6-1.8-8-5.8-8-10.8V5.7z"/><path d="M8.3 12.2l2.7 2.7 5-5.4"/></svg>Equipamentos originais Markem-Imaje</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M2.5 21.5h19M4.5 21.5V9L12 3.5 19.5 9v12.5"/><path d="M9 21.5v-7h6v7"/></svg>Unidades em BH e Rio</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="equip-head">
-    <span class="equip-eyebrow">Equipamentos</span>
-    <h2>Soluções para <em>marcação, codificação</em><br class="d"> e <em>rastreabilidade</em> industrial</h2>
-    <p class="equip-lead">Equipamentos de codificação para linha de produção, para indústrias de alimentos, bebidas, farmacêuticos e eletrônicos. Três tecnologias Markem-Imaje, cada uma para um tipo de embalagem e velocidade de linha.</p>
-  </div>
+  <svg class="equip-deco" viewBox="0 0 560 400" preserveAspectRatio="xMaxYMin meet" aria-hidden="true">
+    <defs>
+      <linearGradient id="eqd" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9a1a8f" stop-opacity=".85"/><stop offset=".55" stop-color="#b54fb0" stop-opacity=".25"/><stop offset="1" stop-color="#d9a6d6" stop-opacity="0"/></linearGradient>
+      <linearGradient id="eql" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9a1a8f" stop-opacity=".7"/><stop offset="1" stop-color="#9a1a8f" stop-opacity=".05"/></linearGradient>
+    </defs>
+    <path d="M405 0H560V250L270 400H120Z" fill="url(#eqd)" opacity=".55"/>
+    <path d="M40 355C110 225 240 120 560 85" stroke="url(#eql)" stroke-width="1.6" fill="none"/>
+    <path d="M140 355C215 260 330 205 560 180" stroke="url(#eql)" stroke-width="1.4" fill="none"/>
+  </svg>
 
-  <div class="equip-cards">
-    <article class="tech-card">
-      <img src="assets/img/card-cij.jpg" alt="Data de validade e lote impressos em tampa plástica" width="218" height="243" loading="lazy">
-      <div class="tech-body">
-        <span class="tech-tag">CIJ</span>
-        <h3>Jato de Tinta Contínuo</h3>
-        <p>Precisão inigualável em altas velocidades para uma ampla gama de materiais.</p>
-        <a class="tech-btn" href="#cij">Ver 5 modelos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M3 12h17M14 6l6 6-6 6"/></svg></a>
-      </div>
-    </article>
-    <article class="tech-card">
-      <img src="assets/img/card-tto.jpg" alt="Lote, validade e QR Code impressos em embalagem flexível" width="217" height="243" loading="lazy">
-      <div class="tech-body">
-        <span class="tech-tag">TTO</span>
-        <h3>Transferência Térmica</h3>
-        <p>Ideal para embalagens flexíveis, garantindo qualidade superior em codificação.</p>
-        <a class="tech-btn" href="#tto">Ver 4 modelos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M3 12h17M14 6l6 6-6 6"/></svg></a>
-      </div>
-    </article>
-    <article class="tech-card">
-      <img src="assets/img/card-pa.jpg" alt="Etiqueta com lote, validade e código de barras aplicada em caixa de papelão" width="218" height="243" loading="lazy">
-      <div class="tech-body">
-        <span class="tech-tag">Print &amp; Apply</span>
-        <h3>Etiquetagem automática</h3>
-        <p>Perfeição no posicionamento e aplicação de etiquetas para embalagens de todos os tamanhos.</p>
-        <a class="tech-btn" href="#pa">Ver 3 modelos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M3 12h17M14 6l6 6-6 6"/></svg></a>
-      </div>
-    </article>
+  <div class="eq-in">
+    <div class="equip-head">
+      <span class="equip-eyebrow">Equipamentos</span>
+      <h2>Soluções para marcação, codificação e rastreabilidade industrial</h2>
+      <p class="equip-lead">Equipamentos de codificação para linha de produção, para indústrias de alimentos, bebidas, farmacêuticos e eletrônicos. Três tecnologias Markem-Imaje, cada uma para um tipo de embalagem e velocidade de linha.</p>
+    </div>
+
+    <div class="equip-cards">
+      <article class="tech-card">
+        <div class="tech-photo"><img src="assets/img/line-cij.jpg" alt="Cabeça de impressão de jato de tinta contínuo codificando lote e validade em embalagem" width="465" height="157" loading="lazy"></div>
+        <div class="tech-body">
+          <span class="tech-tag">CIJ</span>
+          <h3>Jato de Tinta Contínuo</h3>
+          <p>Precisão inigualável em altas velocidades para uma ampla gama de materiais.</p>
+          <a class="tech-btn" href="#cij">Ver 5 modelos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M3 12h17M14 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+      <article class="tech-card">
+        <div class="tech-photo"><img src="assets/img/line-tto.jpg" alt="Impressora de transferência térmica codificando lote, validade e código 2D em embalagem flexível" width="465" height="157" loading="lazy"></div>
+        <div class="tech-body">
+          <span class="tech-tag">TTO</span>
+          <h3>Transferência Térmica</h3>
+          <p>Ideal para embalagens flexíveis, garantindo qualidade superior em codificação.</p>
+          <a class="tech-btn" href="#tto">Ver 4 modelos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M3 12h17M14 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+      <article class="tech-card">
+        <div class="tech-photo"><img src="assets/img/line-pa.jpg" alt="Sistema print &amp; apply aplicando etiqueta com código de barras em caixa de papelão" width="466" height="157" loading="lazy"></div>
+        <div class="tech-body">
+          <span class="tech-tag">Print &amp; Apply</span>
+          <h3>Etiquetagem automática</h3>
+          <p>Perfeição no posicionamento e aplicação de etiquetas para embalagens de todos os tamanhos.</p>
+          <a class="tech-btn" href="#pa">Ver 3 modelos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M3 12h17M14 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+    </div>
   </div>
 </section>
 
